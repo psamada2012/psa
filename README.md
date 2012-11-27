@@ -10,7 +10,7 @@ For a more detailed explanation, see the
 [Installation chapter](http://symfony.com/doc/current/book/installation.html)
 of the Symfony Documentation.
 
-1) Download the Standard Edition
+1) Download the Standard Edition qsdfqsdf
 --------------------------------
 
 If you've already downloaded the standard edition, and unpacked it somewhere
