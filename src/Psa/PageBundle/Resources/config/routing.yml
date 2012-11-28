@@ -9,3 +9,15 @@ PsaPageBundle_contact:
 PsaPageBundle_article:
     pattern:  /article
     defaults: { _controller: PsaPageBundle:Article:index }
+    
+PsaPageBundle_archive:
+    pattern:  /archive
+    defaults: { _controller: PsaPageBundle:Archive:index }
+    
+PsaPageBundle_document:
+    pattern:  /document
+    defaults: { _controller: PsaPageBundle:Document:index }
+    
+PsaPageBundle_about:
+    pattern:  /about
+    defaults: { _controller: PsaPageBundle:About:index }

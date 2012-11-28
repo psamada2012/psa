@@ -36,7 +36,7 @@ hr         {
 	background-color:#999999;
 	height:2px;margin:8px 0;
 	background-attachment:scroll;
-	background-image:url(../images/new/menuLeft/puce.gif);
+	/*background-image:url(../images/commons/content/puce.gif);*/
 	background-repeat:no-repeat;
 	background-position:left top;
 }

@@ -1,6 +1,18 @@
-.menuLeft{margin:0px;padding:0px;background-image:url(../images/new/menuLeft/bottom.gif);background-repeat:no-repeat;background-position:left bottom;padding-bottom:11px;margin-bottom:20px;-moz-border-radius-bottomleft: 10px;-webkit-border-radius-bottomleft: 10px;-moz-border-radius-bottomright: 10px;-webkit-border-radius-bottomright: 10px;-moz-box-shadow:0px 0px 10px #bcbcbc;-webkit-box-shadow:0px 0px 10px #bcbcbc;box-shadow:0px 0px 10px #bcbcbc;}
+.menuLeft{
+        margin:0px;padding:0px;
+        background-image:url(../images/commons/content/bottom.gif);
+        background-repeat:no-repeat;background-position:left bottom;
+        padding-bottom:11px;margin-bottom:20px;
+        -moz-border-radius-bottomleft: 10px;
+        -webkit-border-radius-bottomleft: 10px;
+        -moz-border-radius-bottomright: 10px;
+        -webkit-border-radius-bottomright: 10px;
+        -moz-box-shadow:0px 0px 10px #bcbcbc;
+        -webkit-box-shadow:0px 0px 10px #bcbcbc;
+        box-shadow:0px 0px 10px #bcbcbc;
+}
 .latestNews{
-	background-image:url(../images/new/menuLeft/back.gif);
+	background-image:url(../images/commons/content/back.gif);
 	background-repeat:repeat;
 	background-position:left top;
 	position:relative;
