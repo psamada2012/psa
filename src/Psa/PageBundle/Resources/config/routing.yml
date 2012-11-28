@@ -1,0 +1,7 @@
+PsaPageBundle_homepage:
+    pattern:  /
+    defaults: { _controller: PsaPageBundle:Index:index }
+
+PsaPageBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: PsaPageBundle:Contact:index }

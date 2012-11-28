@@ -1,0 +1,7 @@
+parameters:
+#    psa_page.example.class: Psa\PageBundle\Example
+
+services:
+#    psa_page.example:
+#        class: %psa_page.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

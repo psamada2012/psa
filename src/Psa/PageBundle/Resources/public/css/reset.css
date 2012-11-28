@@ -1,0 +1,42 @@
+*{margin:0;padding:0}
+body       {
+	color:#6c4b2d;
+	font:11px/1.55em arial,helvetica,sans-serif;
+	text-align:center;background-color:
+	#e6e0da;width:auto;background-image:url(../images/commons/background/flower.png);
+	background-repeat:no-repeat;background-position:center top;
+}
+a          {color:#4f8100;text-decoration:none}
+a:hover    {color:#4f8100;text-decoration:underline}
+a img      {border:0}:focus     {outline:0}
+h1         {font-size:2em;line-height:1.17em}
+h2         {margin-bottom:.4em;font-size:1.5em;line-height:1.2em}
+h3         {margin-bottom:.4em;font-size:1.35em;line-height:1.2em}
+h4         {margin-bottom:.4em;font-size:1.05em;line-height:1.35em}
+h5         {margin-bottom:.4em;font-size:1.05em;line-height:1.35em}
+h6         {margin-bottom:.1em;font-size:1em;line-height:1.35em}
+th         {vertical-align:top;font-weight:normal;text-align:left}
+td         {vertical-align:top}
+p          {margin-bottom:.9em}
+address    {margin-bottom:.4em;font-style:normal;line-height:1.4em}
+cite       {font-style:normal;font-size:10px}
+q:before,q:after    {content:''}
+form       {display:inline}
+fieldset   {border:none}
+legend     {display:none}
+label      {color:#555; font-weight:bold}
+input,select,button     {vertical-align:middle}
+dt         {display:block;font-weight:bold}
+ul,ol      {list-style:none}
+small      {font-size:.85em}
+big        {font-size:1.15em}
+hr         {
+	margin:8px 0;
+	color:#999999;
+	background-color:#999999;
+	height:2px;margin:8px 0;
+	background-attachment:scroll;
+	background-image:url(../images/new/menuLeft/puce.gif);
+	background-repeat:no-repeat;
+	background-position:left top;
+}

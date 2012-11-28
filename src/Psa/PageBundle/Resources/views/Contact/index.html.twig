@@ -1,0 +1,75 @@
+{% extends "PsaPageBundle::layout.html.twig" %}
+
+{% block main %}
+<div class="padder">
+							<div id="messages_product_view"></div>
+								<table width="100%" border="0" cellpadding="4" cellspacing="4">
+									<tbody>
+										<tr>
+											<td>
+												<p></p>
+												<h2>Votre interlocutrice :</h2>
+												<p>
+													Jocelyne MARECHAL 
+													06 15 39 73 66 
+													j.marechal@marechal-fraicheur.fr
+												</p>
+												<p>
+													SCEA GUY MARECHAL Chemin de Rosarge - VANCIA 69140 Rillieux-la -Pape
+												</p>
+												<p></p>
+											</td>
+
+										</tr>
+
+									</tbody>
+								</table>
+
+								<form action="http://marechal.oxfoz.net/contacts/index/post/" id="contactForm" method="post">
+									<div class="head-alt2">
+										<h4 class="title">Informations de contact</h4>
+									</div>
+									<fieldset class="group-select">
+										<ul>
+											<li>
+												<div class="input-box">
+													<label for="name">Nom <span class="required">*</span></label><br>
+													<input name="name" id="name" title="Nom" class="required-entry input-text" type="text">
+												</div>
+
+												<div class="input-box">
+													<label for="email">Email <span class="required">*</span></label><br>
+													<input name="email" id="email" title="Email" class="required-entry input-text validate-email" type="text">
+												</div>
+
+												<div class="clear"></div>
+											</li>
+											<li>
+												<div class="input-box">
+													<label for="telephone">Téléphone</label><br>
+													<input name="telephone" id="telephone" title="Téléphone" class="input-text" type="text">
+												</div>
+
+												<div class="clear"></div>
+
+											</li>
+											<li>
+												<div class="input-box">
+													<label for="comment">Commentaire <span class="required">*</span></label><br>
+													<textarea name="comment" id="comment" title="Commentaire" class="required-entry input-text" style="height: 150px; width: 525px;" cols="50" rows="5"></textarea>
+												</div>
+											</li>
+										</ul>
+									</fieldset>
+									Ces informations sont confidentielles et ne seront en aucun cas communiquées á des tiers
+
+									<div class="button-set">
+										<p class="required">* Champs obligatoires</p>
+										<input src="images/btn_submit.gif" alt="Valider" type="image">
+									</div>
+								</form>
+							</div>                		
+						</div>					
+{% endblock %}
+
+
