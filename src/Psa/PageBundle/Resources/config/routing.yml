@@ -5,3 +5,7 @@ PsaPageBundle_homepage:
 PsaPageBundle_contact:
     pattern:  /contact
     defaults: { _controller: PsaPageBundle:Contact:index }
+    
+PsaPageBundle_article:
+    pattern:  /article
+    defaults: { _controller: PsaPageBundle:Article:index }
