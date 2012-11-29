@@ -1,0 +1,2 @@
+- extract vendor.tar.gz to /vendor
+- importé le bdd par sql /doc/bdd.sql
