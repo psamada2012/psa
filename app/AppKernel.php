@@ -19,9 +19,10 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             
             //Bundle ajouté
-            new Psa\PageBundle\PsaPageBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Psa\PageBundle\PsaPageBundle(),
             new Psa\UserBundle\PsaUserBundle(),
+            new Psa\AdminBundle\PsaAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

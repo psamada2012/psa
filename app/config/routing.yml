@@ -1,3 +1,7 @@
+PsaAdminBundle:
+    resource: "@PsaAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
 PsaUserBundle:
     resource: "@PsaUserBundle/Resources/config/routing.yml"
     prefix:   /
