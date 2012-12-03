@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Psa\AdminBundle\Entity\Documents
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="Psa\AdminBundle\Entity\DocumentsRepository")
+ * @ORM\Table(name="documents")
+ * @ORM\Entity(repositoryClass="Psa\AdminBundle\Entity\DocumentRepository")
  */
-class Documents
+class Document
 {
     /**
      * @var integer $id
@@ -43,11 +43,9 @@ class Documents
     private $date_upload;
 
     /**
-     * @var integer $user_id
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     */
-    private $user_id;
+    * @ORM\ManyToOne(targetEntity="Psa\UserBundle\Entity\User")
+    */
+    private $user;
 
 
     /**
@@ -121,22 +119,22 @@ class Documents
     }
 
     /**
-     * Set user_id
+     * Set user
      *
-     * @param integer $userId
+     * @param Psa\UserBundle\Entity\User $user
      */
-    public function setUserId($userId)
+    public function setUser(\Psa\UserBundle\Entity\User $user)
     {
-        $this->user_id = $userId;
+        $this->user = $user;
     }
 
     /**
-     * Get user_id
+     * Get user
      *
-     * @return integer 
+     * @return Psa\UserBundle\Entity\User 
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->user_id;
+        return $this->user;
     }
 }
