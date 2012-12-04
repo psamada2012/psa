@@ -1,3 +1,6 @@
+{% extends "PsaAdminBundle::layout.html.twig" %}
+
+{% block main %}
 <h1>Message creation</h1>
 
 <form action="{{ path('message_create') }}" method="post" {{ form_enctype(form) }}>
@@ -14,3 +17,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}
