@@ -1,0 +1,30 @@
+message:
+    pattern:  /
+    defaults: { _controller: "PsaAdminBundle:Message:index" }
+
+message_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PsaAdminBundle:Message:show" }
+
+message_new:
+    pattern:  /new
+    defaults: { _controller: "PsaAdminBundle:Message:new" }
+
+message_create:
+    pattern:  /create
+    defaults: { _controller: "PsaAdminBundle:Message:create" }
+    requirements: { _method: post }
+
+message_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PsaAdminBundle:Message:edit" }
+
+message_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PsaAdminBundle:Message:update" }
+    requirements: { _method: post }
+
+message_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PsaAdminBundle:Message:delete" }
+    requirements: { _method: post }
