@@ -1,0 +1,33 @@
+/* 
+    Document   : psa-admin
+    Created on : 6 déc. 2012, 09:44:18
+    Author     : Nico <your.name at your.org>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+        
+div.content-list-article{
+    margin:10px 50px;
+}
+
+table.records_list{
+    width: 100%;
+    background: none repeat scroll 0 0 #CADD8B;
+}
+h1.titre-list{
+    color: #6C4B2D;
+    text-align: center;
+}
+
+thead.head_regords_list{
+     background: none repeat scroll 0 0 #CADD8B;
+}
+
+tr.vert-clair{
+    background-color: #EFF4DD;
+}
+
+tr.vert-fonc{
+    background-color:#E2EDC2;
+}

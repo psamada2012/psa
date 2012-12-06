@@ -1,13 +1,12 @@
 {% extends "PsaAdminBundle::layout.html.twig" %}
 
 {% block main %}
-<h1>Document list</h1>
+<div class="content-list-article">
+<h1 class="titre-list">Document list</h1>
 
 <table class="records_list">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Path</th>
             <th>Description</th>
             <th>Date_upload</th>
             <th>Actions</th>
@@ -15,9 +14,7 @@
     </thead>
     <tbody>
     {% for entity in entities %}
-        <tr>
-            <td><a href="{{ path('document_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td>{{ entity.path }}</td>
+        <tr {%if loop.index is divisibleby(2)%} class="vert-fonc" {%else%}class="vert-clair"{%endif%} >
             <td>{{ entity.description }}</td>
             <td>{% if entity.dateupload %}{{ entity.dateupload|date('Y-m-d H:i:s') }}{% endif%}</td>
             <td>
@@ -38,8 +35,9 @@
 <ul>
     <li>
         <a href="{{ path('document_new') }}">
-            Create a new entry
+            + Ajouter document
         </a>
     </li>
 </ul>
+</div>
 {% endblock %}
