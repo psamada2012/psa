@@ -202,7 +202,13 @@ table.pager td.sort-by .active,table.pager td.sort-by .active:hover{color:#444;}
 	background-position:left 7px;}
 .middle{min-height:350px;}
 .layout-1column{margin-top:25px;padding:0 30px 40px 30px;}
-.col-left{margin-top:25px;float:left;width:194px;margin-left:26px;padding:0px;}
+.col-left{
+       margin-top:0px;/*25px;*/
+       float:left;
+       width:200px;
+       margin-left:26px;
+       padding:0px;
+}
 .col-right{margin-top:25px;float:right;width:195px;margin-right:26px;}
 .col-main{margin-top:25px;float:right;width:685px;margin-right:15px;padding-bottom:10px;}
 .col-main img{max-width:685px;}

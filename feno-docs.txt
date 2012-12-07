@@ -1,0 +1,13 @@
+PASS : xpasmada2012
+TODO : Ajout simple pages et controllers archive, document, qui-somme-nous      ------> OK
+TODO : css menu active
+TODO : css latest news                                                          ------> OK
+TODO : Offre financiere
+TODO : Envoyer offre financiere à psdr
+
+
+
+---------
+http://www.onlinejobsfree.com/?id=1161421 
+
+http://www.youtube.com/watch?v=2C1s7UPevE8&feature=BFa&list=UUq6jhYDQ2HBvEPIev8NDglw
