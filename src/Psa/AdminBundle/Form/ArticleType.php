@@ -12,8 +12,8 @@ class ArticleType extends AbstractType
         $builder
             ->add('titre')
             ->add('contenu')
-            ->add('image1',"file")
-            ->add('image2',"file")
+            ->add('image1',"file",array("required"=>false))
+            ->add('image2',"file",array("required"=>false))
             ->add('datePublication')
             ->add('user')
         ;

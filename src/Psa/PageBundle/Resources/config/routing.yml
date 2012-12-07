@@ -9,6 +9,10 @@ PsaPageBundle_contact:
 PsaPageBundle_article:
     pattern:  /article
     defaults: { _controller: PsaPageBundle:Article:index }
+
+PsaPageBundle_article_show:
+    pattern:  /article{id}
+    defaults: { _controller: PsaPageBundle:Article:show }
     
 PsaPageBundle_archive:
     pattern:  /archive

@@ -1,17 +1,13 @@
 {% extends "PsaPageBundle::layout.html.twig" %}
 
 {% block main %}
-
 					
-    <div id="page">
-        {% for article in articles%}
-        <div class="article">
+    <div id="page" >
+        <div class="article" style="height: auto">
                 <h2 class="title">{{article.titre|raw}}</h2>
                 <img  src="{{asset(article.image1)}}" alt="" width="250" height="250" class="alignleft" />
                 <p>{{article.contenu|raw}} </p>
         </div>
-            <a style="float: right" href="{{path('PsaPageBundle_article_show',{id:article.id})}}">En savoir plus</a><br/><br/>
-        {%endfor%}
     </div>
 
 {% endblock %}
