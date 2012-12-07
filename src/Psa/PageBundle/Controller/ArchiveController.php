@@ -10,6 +10,11 @@ class ArchiveController extends Controller
     
     public function indexAction()
     {
-        return $this->render('PsaPageBundle:Archive:index.html.twig');
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $articles = $em->getRepository('PsaAdminBundle:Article')->findAll();
+        $aParam['articles']=$articles;
+        
+        return $this->render('PsaPageBundle:Archive:index.html.twig',$aParam);
     }
 }
