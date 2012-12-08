@@ -80,37 +80,23 @@ class ArticleController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
             
-             $directory        = $this->container->getParameter("directory_images");
-            $params['tailleMaxi']       = $this->container->getParameter("taille_maxi_images");
-            $params['allowedExtension'] = $this->container->getParameter("extension_images");
-                
             if (isset($_FILES["psa_adminbundle_articletype"]['size']["image1"]) && $_FILES["psa_adminbundle_articletype"]['size']["image1"]>0) { 
-                //File Infos
-                $taille = filesize($_FILES["psa_adminbundle_articletype"]['tmp_name']["image1"]);
-                $extension = strrchr($_FILES["psa_adminbundle_articletype"]['name']["image1"], '.');
-                $fichier = md5(uniqid(mt_rand(), true));
+              
+                $params['directory']        = $this->container->getParameter("directory_images");
+                $params['tailleMaxi']       = $this->container->getParameter("taille_maxi_images");
+                $params['allowedExtension'] = $this->container->getParameter("extension_images");
+                $params['inputName']        = "psa_adminbundle_articletype";
+                $params['inputName2']       = "image1";
+                
+                $helper = $this->get("admin.helper.core");
+                $file_uploaded = $helper->uploadFile($params);
+                
                  //Upload
-                if (move_uploaded_file($_FILES["psa_adminbundle_articletype"]['tmp_name']["image1"], $directory . $fichier . $extension)) {
-                    $complete_path = $directory . $fichier . $extension;
-                    chmod($complete_path, 0777);
-               
-                    $image1 = "images/". $fichier . $extension;
+                if ($file_uploaded["success"]) {
+                    $image1 = "images/". $file_uploaded["fichier"];
                     $entity->setImage1($image1);
-                }
-            }
-            
-           if (isset($_FILES["psa_adminbundle_articletype"]['size']["image2"]) && $_FILES["psa_adminbundle_articletype"]['size']["image2"]>0) { 
-                //File Infos
-                $taille = filesize($_FILES["psa_adminbundle_articletype"]['tmp_name']["image2"]);
-                $extension = strrchr($_FILES["psa_adminbundle_articletype"]['name']["image2"], '.');
-                $fichier = md5(uniqid(mt_rand(), true));
-                 //Upload
-                if (move_uploaded_file($_FILES["psa_adminbundle_articletype"]['tmp_name']["image2"], $directory . $fichier . $extension)) {
-                    $complete_path = $directory . $fichier . $extension;
-                    chmod($complete_path, 0777);
-               
-                    $image2 = "images/". $fichier . $extension;
-                    $entity->setimage2($image2);
+                }  else {
+                    $this->get('session')->setFlash('info', $file_uploaded["success"]);
                 }
             }
             
@@ -174,37 +160,23 @@ class ArticleController extends Controller
 
         if ($editForm->isValid()) {
             
-            $directory        = $this->container->getParameter("directory_images");
-            $params['tailleMaxi']       = $this->container->getParameter("taille_maxi_images");
-            $params['allowedExtension'] = $this->container->getParameter("extension_images");
-                
             if (isset($_FILES["psa_adminbundle_articletype"]['size']["image1"]) && $_FILES["psa_adminbundle_articletype"]['size']["image1"]>0) { 
-                //File Infos
-                $taille = filesize($_FILES["psa_adminbundle_articletype"]['tmp_name']["image1"]);
-                $extension = strrchr($_FILES["psa_adminbundle_articletype"]['name']["image1"], '.');
-                $fichier = md5(uniqid(mt_rand(), true));
+              
+                $params['directory']        = $this->container->getParameter("directory_images");
+                $params['tailleMaxi']       = $this->container->getParameter("taille_maxi_images");
+                $params['allowedExtension'] = $this->container->getParameter("extension_images");
+                $params['inputName']        = "psa_adminbundle_articletype";
+                $params['inputName2']       = "image1";
+                
+                $helper = $this->get("admin.helper.core");
+                $file_uploaded = $helper->uploadFile($params);
+                
                  //Upload
-                if (move_uploaded_file($_FILES["psa_adminbundle_articletype"]['tmp_name']["image1"], $directory . $fichier . $extension)) {
-                    $complete_path = $directory . $fichier . $extension;
-                    chmod($complete_path, 0777);
-               
-                    $image1 = "images/". $fichier . $extension;
+                if ($file_uploaded["success"]) {
+                    $image1 = "images/". $file_uploaded["fichier"];
                     $entity->setImage1($image1);
-                }
-            }
-            
-           if (isset($_FILES["psa_adminbundle_articletype"]['size']["image2"]) && $_FILES["psa_adminbundle_articletype"]['size']["image2"]>0) { 
-                //File Infos
-                $taille = filesize($_FILES["psa_adminbundle_articletype"]['tmp_name']["image2"]);
-                $extension = strrchr($_FILES["psa_adminbundle_articletype"]['name']["image2"], '.');
-                $fichier = md5(uniqid(mt_rand(), true));
-                 //Upload
-                if (move_uploaded_file($_FILES["psa_adminbundle_articletype"]['tmp_name']["image2"], $directory . $fichier . $extension)) {
-                    $complete_path = $directory . $fichier . $extension;
-                    chmod($complete_path, 0777);
-               
-                    $image2 = "images/". $fichier . $extension;
-                    $entity->setimage2($image2);
+                }  else {
+                    $this->get('session')->setFlash('info', $file_uploaded["error"]);
                 }
             }
             

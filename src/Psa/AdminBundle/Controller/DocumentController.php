@@ -130,6 +130,8 @@ class DocumentController extends Controller
             throw $this->createNotFoundException('Unable to find Document entity.');
         }
 
+        $oldPath    = $entity->getPath();
+        
         $editForm   = $this->createForm(new DocumentType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
@@ -138,10 +140,32 @@ class DocumentController extends Controller
         $editForm->bindRequest($request);
 
         if ($editForm->isValid()) {
+            
+             if (isset($_FILES["psa_adminbundle_documenttype"]['size']["path"]) && $_FILES["psa_adminbundle_documenttype"]['size']["path"]>0) { 
+              
+                $params['directory']        = $this->container->getParameter("directory_documents");
+                $params['tailleMaxi']       = $this->container->getParameter("taille_maxi_documents");
+                $params['allowedExtension'] = $this->container->getParameter("extension_documents");
+                $params['inputName']        = "psa_adminbundle_documenttype";
+                $params['inputName2']       = "path";
+                
+                $helper = $this->get("admin.helper.core");
+                $file_uploaded = $helper->uploadFile($params);
+                
+                 //Upload
+                if ($file_uploaded["success"]== true) {
+                    $path = "documents/". $file_uploaded["fichier"];
+                    $entity->setpath($path);
+                }  else {
+                    $entity->setpath($oldPath);
+                    $this->get('session')->setFlash('error', $file_uploaded["error"]);
+                }
+            }
+            
             $em->persist($entity);
             $em->flush();
-
-            return $this->redirect($this->generateUrl('document_edit', array('id' => $id)));
+            $this->get('session')->setFlash('info', "Mise à jour effectué");
+            return $this->redirect($this->generateUrl('document'));
         }
 
         return $this->render('PsaAdminBundle:Document:edit.html.twig', array(

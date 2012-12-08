@@ -42,12 +42,7 @@ class Article
      */
     private $image1;
 
-    /**
-     * @var string $image2
-     *
-     * @ORM\Column(name="image2", type="string", length=255, nullable=true)
-     */
-    private $image2;
+    
 
     /**
      * @var datetime $datePublication
@@ -132,25 +127,6 @@ class Article
         return $this->image1;
     }
 
-    /**
-     * Set image2
-     *
-     * @param string $image2
-     */
-    public function setImage2($image2)
-    {
-        $this->image2 = $image2;
-    }
-
-    /**
-     * Get image2
-     *
-     * @return string 
-     */
-    public function getImage2()
-    {
-        return $this->image2;
-    }
 
     /**
      * Set datePublication

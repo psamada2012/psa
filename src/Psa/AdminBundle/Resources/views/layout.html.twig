@@ -69,8 +69,14 @@
 				<!-- REGION CONTENT -->
 				
 					<div class="middle layout-2columns">
-					
+                                            <p style="color: red">
+                                                {# On affiche tous les messages flash #}
+                                                {% for key, flash in app.session.getFlashes() %}
+                                                {{ flash }}<br/>
+                                                {% endfor %}
+                                            </p>
                                             {% block main %}
+                                            
 
                                             {% endblock %}	
 					

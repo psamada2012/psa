@@ -2,6 +2,6 @@ parameters:
 #    psa_admin.example.class: Psa\AdminBundle\Example
 
 services:
-#    psa_admin.example:
-#        class: %psa_admin.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    admin.helper.core:
+        class: Psa\AdminBundle\Helper\Core
+        arguments: []

@@ -21,8 +21,16 @@ class Core {
         extract($aParam);
 
         //File Infos
-        $taille = filesize($_FILES["$inputName"]['tmp_name']);
-        $extension = strrchr($_FILES["$inputName"]['name'], '.');
+        $tmp_file = $_FILES["$inputName"]['tmp_name'];
+        $file     = $_FILES["$inputName"]['name'];
+        
+        if(isset($inputName2)){
+            $tmp_file   =   $tmp_file["$inputName2"];
+            $file       =   $file["$inputName2"];
+        }
+        
+        $taille = filesize($tmp_file);
+        $extension = strrchr($file, '.');
 
         //Data verification
         $aAllowedExtensions = explode(',', $allowedExtension);
@@ -40,7 +48,7 @@ class Core {
             $fichier = md5(uniqid(mt_rand(), true));
             
             //Upload
-            if (move_uploaded_file($_FILES["$inputName"]['tmp_name'], $directory . $fichier . $extension)) {
+            if (move_uploaded_file($tmp_file, $directory . $fichier . $extension)) {
                 $complete_path = $directory . $fichier . $extension;
                 chmod($complete_path, 0777);
                 return array("complete_path"=>$complete_path,

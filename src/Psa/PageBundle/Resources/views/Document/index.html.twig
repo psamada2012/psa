@@ -1,7 +1,15 @@
 {% extends "PsaPageBundle::layout.html.twig" %}
 
 {% block main %}
-    DOCUMENT : On peut y télécharger des documents pdf, word ou autre format
+     <div id="page">
+        {% for document in documents%}
+        <div class="document">
+                <h2 class="title">{{document.dateUpload|date("j/m/Y")}}</h2>
+                <p>{{document.description|raw}} </p>
+        </div>
+            <a style="float: right" href="{{path('PsaPageBundle_document',{'url_file':document.path})}}">Télécharger</a><br/><br/>
+        {%endfor%}
+    </div>
 {% endblock %}
 
 

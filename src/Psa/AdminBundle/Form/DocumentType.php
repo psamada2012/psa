@@ -10,7 +10,7 @@ class DocumentType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('path')
+            ->add('path',"file")
             ->add('description')
             ->add('date_upload')
             ->add('user')
