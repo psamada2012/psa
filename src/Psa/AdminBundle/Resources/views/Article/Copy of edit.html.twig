@@ -1,0 +1,72 @@
+{% extends "PsaAdminBundle::layout.html.twig" %}
+
+{% block main %}
+
+
+    <div id="central" class="mains">
+            <div>
+
+                    <h2>Editer un article</h2>
+                    <form action="{{ path('article_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+                        {# {{ form_widget(edit_form) }} #}
+
+                        <fieldset class="first clearfix">
+
+                                <p>
+
+                                        {{ form_label(edit_form.titre, "Titre de l'article") }} 
+                                        {{ form_widget(edit_form.titre) }}
+
+                                </p>
+
+                                <p>
+
+                                        {{ form_label(edit_form.contenu, "Contenu") }} 
+                                        {{ form_widget(edit_form.contenu) }}
+
+                                </p>
+
+                        </fieldset>
+                        <fieldset class="second clearfix">
+
+                                <p>
+                                        <img src="{{asset(edit_form.vars.value.image1)}}" alt="" width="250" height="250" />
+                                        <!--input type="file" id="upload_image" name="upload_image" style="visibility:hidden; height:0px;"/>-->
+                                        {{ form_widget(edit_form.image1,{ 'attr' : { 'id' : 'upload_image','style':'visibility:hidden' } }) }}
+                                        <a id="load_image" href="javascript:onclick=document.getElementById('psa_adminbundle_articletype_image1').click()" title="Charger une nouvelle photo">
+                                                <span>&gt; Charger une nouvelle image</span>
+                                        </a>
+
+                                </p>
+                        </fieldset>        
+
+                        <fieldset class="third">
+                                
+                                {# <span><span>*</span> champs obligatoire</span>#}
+
+                                <a href="{{ path('article') }}" title="Revenir à la liste">&lt;&lt; Revenir à la liste</a>
+
+                                <button type="submit" value="edit" class="edit"/>
+                                {{ form_rest(edit_form) }}
+                        </fieldset>
+                    </form>
+                    <form action="{{ path('article_delete', { 'id': entity.id }) }}" method="post">
+                        {{ form_widget(delete_form) }}
+                        <button type="submit">Delete</button>
+                    </form>
+            </div>
+     </div>
+
+{#
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('article') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+
+    </li>
+</ul>
+#}
+{% endblock %}

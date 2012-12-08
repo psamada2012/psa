@@ -13,8 +13,8 @@ class ArticleType extends AbstractType
             ->add('titre')
             ->add('contenu')
             ->add('image1',"file",array("required"=>false))
-            ->add('datePublication')
-            ->add('user')
+            ->add('datePublication',null,array("attr"=>array("style"=>"visibility:hidden")))
+            ->add('user',null,array("attr"=>array("style"=>"visibility:hidden")))
         ;
     }
 

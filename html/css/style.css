@@ -127,7 +127,7 @@ ul img {
 	padding: 0;
 }
 #archive ul li {
-	height: 100px;
+	/*height: 100px;*/
 	width: 600px;
 	margin: 0 0 10px;
 	padding: 20px 20px 20px 30px;
@@ -285,3 +285,6 @@ span.leaf {
   padding: 0 0 4px 28px;
   line-height: 1.5em;
 }
+
+
+

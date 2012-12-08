@@ -1,20 +1,57 @@
 {% extends "PsaAdminBundle::layout.html.twig" %}
 
 {% block main %}
-<h1>Article creation</h1>
 
-<form action="{{ path('article_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit">Create</button>
-    </p>
-</form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('article') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <div id="central" class="mains">
+            <div>
+
+                    <h2>Créer un article</h2>
+                    <form action="{{ path('article_create') }}" method="post" {{ form_enctype(form) }}>
+                                 <fieldset class="first clearfix">
+
+                                         <p>
+
+                                                 {{ form_label(form.titre, "Titre de l'article") }} 
+                                                 {{ form_widget(form.titre) }}
+
+                                         </p>
+
+                                         <p>
+
+                                                 {{ form_label(form.contenu, "Contenu") }} 
+                                                 {{ form_widget(form.contenu) }}
+
+                                         </p>
+
+                                 </fieldset>
+                                 <fieldset class="second clearfix">
+
+                                         <p>
+                                                 <img src="{{asset('bundles/psaadmin/images/commons/form/creation_no_photo.gif')}}" alt="" width="250" height="250" />
+                                                 <!--input type="file" id="upload_image" name="upload_image" style="visibility:hidden; height:0px;"/>-->
+                                                 {{ form_widget(form.image1,{ 'attr' : { 'id' : 'upload_image','style':'visibility:hidden' } }) }}
+                                                 <a id="load_image" href="javascript:onclick=document.getElementById('psa_adminbundle_articletype_image1').click()" title="Charger une nouvelle photo">
+                                                         <span>&gt; Charger une nouvelle image</span>
+                                                 </a>
+
+                                         </p>
+                                 </fieldset>        
+
+                                 <fieldset class="third">
+
+                                         {# <span><span>*</span> champs obligatoire</span>#}
+
+                                         <a href="{{ path('article') }}" title="Revenir à la liste">&lt;&lt; Revenir à la liste</a>
+
+                                         <button type="submit" value="create" class="create"/>
+                                         {{ form_rest(form) }}
+                                 </fieldset>
+                             </form>
+
+                     </div>
+              </div>
+
+                    
+                    
 {% endblock %}	
