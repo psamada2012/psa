@@ -79,10 +79,32 @@ class DocumentController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
+            
+            if (isset($_FILES["psa_adminbundle_documenttype"]['size']["path"]) && $_FILES["psa_adminbundle_documenttype"]['size']["path"]>0) { 
+              
+                $params['directory']        = $this->container->getParameter("directory_documents");
+                $params['tailleMaxi']       = $this->container->getParameter("taille_maxi_documents");
+                $params['allowedExtension'] = $this->container->getParameter("extension_documents");
+                $params['inputName']        = "psa_adminbundle_documenttype";
+                $params['inputName2']       = "path";
+                
+                $helper = $this->get("admin.helper.core");
+                $file_uploaded = $helper->uploadFile($params);
+                
+                 //Upload
+                if ($file_uploaded["success"]== true) {
+                    $path = $file_uploaded["fichier"];
+                    $entity->setpath($path);
+                }  else {
+                    $entity->setpath($oldPath);
+                    $this->get('session')->setFlash('error', $file_uploaded["error"]);
+                }
+            }
+            
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('document_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('document'));
             
         }
 
@@ -154,7 +176,7 @@ class DocumentController extends Controller
                 
                  //Upload
                 if ($file_uploaded["success"]== true) {
-                    $path = "documents/". $file_uploaded["fichier"];
+                    $path = $file_uploaded["fichier"];
                     $entity->setpath($path);
                 }  else {
                     $entity->setpath($oldPath);
@@ -164,7 +186,9 @@ class DocumentController extends Controller
             
             $em->persist($entity);
             $em->flush();
+            
             $this->get('session')->setFlash('info', "Mise à jour effectué");
+            
             return $this->redirect($this->generateUrl('document'));
         }
 

@@ -2,6 +2,10 @@ PsaAdminBundle_homepage:
     pattern:  /
     defaults: { _controller: PsaAdminBundle:Index:index }
 
+PsaAdminBundle_about:
+    pattern:  /about
+    defaults: { _controller: PsaAdminBundle:About:index }
+
 PsaAdminBundle_article:
     resource: "@PsaAdminBundle/Resources/config/routing/article.yml"
     prefix:   /article

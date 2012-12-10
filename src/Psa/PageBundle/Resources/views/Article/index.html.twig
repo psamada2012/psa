@@ -6,7 +6,8 @@
     <div id="page">
         {% for article in articles%}
         <div class="article">
-                <h2 class="title">{{article.titre|raw}}</h2>
+                
+                <h2 class="title">{{article.titre|raw}} ({{article.datePublication|date("j/m/Y")}})</h2> 
                 <img  src="{{asset(article.image1)}}" alt="" width="250" height="250" class="alignleft" />
                 <p>{{article.contenu|raw}} </p>
         </div>

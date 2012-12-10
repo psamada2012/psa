@@ -12,7 +12,12 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $articles = $em->getRepository('PsaAdminBundle:Article')->findAll();
+        $articles = $em->getRepository('PsaAdminBundle:Article')->findBy(
+                    $criteres	= array(),
+                    $order		= array("datePublication"=>"desc"),
+                    $limit		= 5
+            );
+        
         $aParam['articles']=$articles;
         
         return $this->render('PsaPageBundle:Article:index.html.twig',$aParam);
@@ -44,21 +49,21 @@ class ArticleController extends Controller
 	*/
 	public function widgetDerniersArticlesAction()
 	{
-		$em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getEntityManager();
 
-        $articles = $em->getRepository('PsaAdminBundle:Article')->findBy(
-			$criteres	= array(),
-			$order		= array("datePublication"=>"desc"),
-			$limit		= 5
-		);
+            $articles = $em->getRepository('PsaAdminBundle:Article')->findBy(
+                    $criteres	= array(),
+                    $order		= array("datePublication"=>"desc"),
+                    $limit		= 5
+            );
 
-        if (!$articles) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
-        
-        $aParam['articles']=$articles;
+            if (!$articles) {
+                throw $this->createNotFoundException('Unable to find Article entity.');
+            }
 
-        return $this->render('PsaPageBundle:Article:widget_derniers_articles.html.twig', $aParam
-        );
+            $aParam['articles']=$articles;
+
+            return $this->render('PsaPageBundle:Article:widget_derniers_articles.html.twig', $aParam
+            );
 	}
 }

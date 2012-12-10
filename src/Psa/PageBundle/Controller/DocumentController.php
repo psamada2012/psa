@@ -52,7 +52,10 @@ class DocumentController extends Controller
         
         $em = $this->getDoctrine()->getEntityManager();
 
-        $documents = $em->getRepository('PsaAdminBundle:Document')->findAll();
+        $documents = $em->getRepository('PsaAdminBundle:Document')->findBy(
+                    $criteres	= array(),
+                    $order		= array("date_upload"=>"desc")
+            );
 
         return $this->render('PsaPageBundle:Document:index.html.twig', array(
             'documents' => $documents

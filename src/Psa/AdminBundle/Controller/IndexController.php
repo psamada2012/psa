@@ -21,23 +21,11 @@ class IndexController extends Controller
             throw $this->createNotFoundException('Unable to find PageMeta entity.');
         }
 
-		$editFormAccueilTexte = $this->createForm(new PageMetaType(), $page_meta_accueil_texte);
-
-		
-		//About
-		$page_meta_about = $repPageMeta->findOneBy(array("cle"=>"about"));
-
-        if (!$page_meta_about) {
-            throw $this->createNotFoundException('Unable to find PageMeta entity.');
-        }
-
-		$editFormAbout = $this->createForm(new PageMetaType(), $page_meta_about);
-
+	$editFormAccueilTexte = $this->createForm(new PageMetaType(), $page_meta_accueil_texte);
+        
         return $this->render('PsaAdminBundle:Index:index.html.twig', array(
 			'page_meta_accueil_texte'      => $page_meta_accueil_texte,
 			'edit_form_accueil_texte'   => $editFormAccueilTexte->createView(),
-            'page_meta_about'      => $page_meta_about,
-			'edit_form_about'   => $editFormAbout->createView(),
         ));
     }
 	

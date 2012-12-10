@@ -96,14 +96,14 @@ class ArticleController extends Controller
                     $image1 = "images/". $file_uploaded["fichier"];
                     $entity->setImage1($image1);
                 }  else {
-                    $this->get('session')->setFlash('info', $file_uploaded["success"]);
+                    $this->get('session')->setFlash('info', $file_uploaded["error"]);
                 }
             }
             
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('article_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('article'));
             
         }
 
