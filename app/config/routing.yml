@@ -1,3 +1,7 @@
+PsaAdminBundle_pagemeta:
+    resource: "@PsaAdminBundle/Resources/config/routing/pagemeta.yml"
+    prefix:   /pagemeta
+
 PsaAdminBundle:
     resource: "@PsaAdminBundle/Resources/config/routing.yml"
     prefix:   /admin

@@ -10,6 +10,18 @@ class AboutController extends Controller
     
     public function indexAction()
     {
-        return $this->render('PsaPageBundle:About:index.html.twig');
+		$em = $this->getDoctrine()->getEntityManager();
+		$repPageMeta = $em->getRepository('PsaAdminBundle:PageMeta');
+
+		//Texte Accueil
+        $about = $repPageMeta->findOneBy(array("cle"=>"about"));
+
+        if (!$about) {
+            throw $this->createNotFoundException('Unable to find PageMeta entity.');
+        }
+		
+		$aParam["about"]=$about->getValue();
+		
+        return $this->render('PsaPageBundle:About:index.html.twig',$aParam);
     }
 }

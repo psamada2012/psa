@@ -3,5 +3,6 @@
 /app/cache/*
 /app/logs/*
 /vendor/
+/web/documents/*
 /app/config/parameters.yml
 /nbproject/

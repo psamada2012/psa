@@ -1,0 +1,30 @@
+pagemeta:
+    pattern:  /
+    defaults: { _controller: "PsaAdminBundle:PageMeta:index" }
+
+pagemeta_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PsaAdminBundle:PageMeta:show" }
+
+pagemeta_new:
+    pattern:  /new
+    defaults: { _controller: "PsaAdminBundle:PageMeta:new" }
+
+pagemeta_create:
+    pattern:  /create
+    defaults: { _controller: "PsaAdminBundle:PageMeta:create" }
+    requirements: { _method: post }
+
+pagemeta_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PsaAdminBundle:PageMeta:edit" }
+
+pagemeta_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PsaAdminBundle:PageMeta:update" }
+    requirements: { _method: post }
+
+pagemeta_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PsaAdminBundle:PageMeta:delete" }
+    requirements: { _method: post }
