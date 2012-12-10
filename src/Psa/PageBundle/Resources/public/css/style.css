@@ -21,7 +21,8 @@ ul.slideshow li {
   list-style: none;}
  
 ul.slideshow li.show {
-  z-index: 500;}
+  z-index: 500;
+}
  
 ul img {
   border: none;
@@ -129,7 +130,7 @@ ul img {
 	padding: 0;
 }
 #archive ul li {
-	height: 100px;
+	/*height: 100px;*/
 	width: 600px;
 	margin: 0 0 10px;
 	padding: 20px 20px 20px 30px;

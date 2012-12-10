@@ -1,0 +1,198 @@
+﻿/* ---------------------------------------------------------------------*/
+/* Central */
+/* ---------------------------------------------------------------------*/
+#central{
+	/*background:url(../images/commons/form/bkg_central_repeat.gif) 0 0 repeat;*/
+	border-top:1px solid #eff1ed;
+	border-bottom:1px solid #eff1ed;
+	height:445px;
+	padding-top:50px;
+	margin:10px;
+}
+#central h2{
+	color:#232323;
+	font-size:20px;
+	border-bottom:1px solid #c4c4c4;
+	padding-bottom:5px;
+}
+/* ---------------------------------------------------------------------*/
+/* Création place */
+/* ---------------------------------------------------------------------*/
+#central > div > h2 + *{
+	border-top:1px solid #fff;
+}
+#central form fieldset.first,
+#central form fieldset.second{
+	float:left;
+	width:600px;
+	height:280px;
+	border-bottom:1px solid #c4c4c4;
+	padding:10px 0;
+}
+#central form fieldset.second{
+	width:300px;
+}
+
+
+#central form fieldset.third{clear:both;}
+
+#central form p label{
+	color:#474747;
+	font-size:16px;
+}
+#central form p label span{
+	color:#e61f25;
+}
+#central form p > label:first-child{
+	width:145px;
+	display:inline-block;
+}
+#central form p input[type="text"]{
+	width:400px;
+	height:33px;
+	line-height:33px;
+	border:1px solid #a8a8a8;
+	padding:0 5px;
+}
+#central form p input[type="text"]:hover,
+#central form p input[type="text"]:focus{
+	border-color:#383838;
+}
+#central form p input[type="text"]::-moz-focus-inner{padding:0; margin:0;}
+#central form p input[type="text"]#nb{
+	width:27px;
+	height:34px;
+	text-align:center;
+}
+#central form fieldset > p{
+	margin-top:0;
+}
+
+
+/* Second fieldset */
+#central form fieldset.second label{
+	vertical-align:top;
+	padding-top:10px;
+}
+#central form fieldset.second p{
+	position:relative;
+	margin-left:29px;
+}
+#central form fieldset.second > p:first-child{
+	height:81px;
+}
+#central form fieldset.second > p:first-child img{
+	position:absolute;
+	top:0;
+	/*left:149px;*/
+	border:1px solid #a8a8a8;
+}
+#central form fieldset.second > p:first-child a{
+	position:absolute;
+	top:260px;
+	left:0px;
+	font-size:12px;
+	color:#2e85bc;
+	border-bottom:1px dotted #2e85bc;
+	text-decoration:none;
+}
+#central form fieldset.second > p:first-child a:hover{
+	border-bottom-style:solid;
+}
+#central form fieldset.second > p:first-child + p{
+	margin-bottom:0;
+}
+#central form fieldset.first textarea{
+	width:550px;
+	height:200px;
+	resize:none;
+	border:1px solid #a8a8a8;
+	overflow:hidden;
+	padding:3px;
+	margin-top:2px;
+	padding:0 5px;
+}
+#central form fieldset.first textarea:hover,
+#central form fieldset.first textarea:focus{
+	border-color:#383838;
+}
+
+/* Dernier fieldset */
+#central form fieldset.third{
+	border-top:1px solid #fff;
+	position:relative;
+}
+#central form fieldset.third > span{
+	position:absolute;
+	left:0;
+	top:30px;
+	font-size:11px;
+	color:#878787;
+}
+#central form fieldset.third > span span{
+	color:#e61f25;
+}
+#central form fieldset.third > a{
+	position:absolute;
+	right:210px;
+	top:30px;
+	color:#474747;
+	font-size:14px;
+	border-bottom:1px dotted #e11313;
+	text-decoration:none;
+}
+#central form fieldset.third > a:hover{
+	border-bottom-style:solid;
+}
+#central form fieldset.third button.create{
+	position:absolute;
+	right:0;
+	top:20px;
+	width:180px;
+	height:39px;
+	background:url(../images/commons/form/submit_create.gif) 0 0 no-repeat;
+	border:none;
+	cursor:pointer;
+}
+#central form fieldset.third button.edit{
+	position:absolute;
+	right:0;
+	top:20px;
+	width:180px;
+	height:39px;
+	background:url(../images/commons/form/submit_edit.gif) 0 0 no-repeat;
+	border:none;
+	cursor:pointer;
+}
+
+#central form fieldset.third input:hover{
+	background-position: 0 -39px;
+}
+
+/* Clearfix */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+* html
+.clearfix {
+    zoom: 1;
+}
+*:first-child+html
+.clearfix {
+    zoom: 1;
+}
+
+/* Formulaires */
+form, fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+input, button, select {
+  vertical-align: middle; /* Solution pb. d'alignement. (9) */
+}
