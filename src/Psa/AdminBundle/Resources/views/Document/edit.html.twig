@@ -1,8 +1,50 @@
 {% extends "PsaAdminBundle::layout.html.twig" %}
 
 {% block main %}
-<h1>Document edit</h1>
 
+    <div id="central" class="mains">
+            <div>
+
+                    <h2>Editer un document</h2>
+                    <form action="{{ path('document_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+                        {#{{ form_widget(edit_form) }}#}
+
+                        <fieldset class="main clearfix">
+                                <p>
+                                        {{ form_widget(edit_form.path,{ 'attr' : { 'style':'visibility:hidden;width:0px' } }) }}
+                                        <a id="load_document" href="javascript:onclick=document.getElementById('psa_adminbundle_documenttype_path').click()" title="Charger un document">
+                                                <span>&gt; Charger un document</span>
+                                        </a>
+
+                                </p>
+                                <p>
+
+                                        {{ form_label(edit_form.description, "Déscription") }} 
+                                        {{ form_widget(edit_form.description) }}
+
+                                </p>
+
+                        </fieldset>
+  
+
+                        <fieldset class="third">
+                                
+                                {# <span><span>*</span> champs obligatoire</span>#}
+
+                                <a href="{{ path('document') }}" title="Revenir à la liste">&lt;&lt; Revenir à la liste</a>
+
+                                <button type="submit" value="edit" class="edit"/>
+                                {{ form_rest(edit_form) }}
+                        </fieldset>
+                    </form>
+                    <form action="{{ path('document_delete', { 'id': entity.id }) }}" method="post">
+                        {{ form_widget(delete_form) }}
+                        <button type="submit">Delete</button>
+                    </form>
+            </div>
+     </div>
+
+{#
 <form action="{{ path('document_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     {{ form_widget(edit_form) }}
     <p>
@@ -23,4 +65,6 @@
         </form>
     </li>
 </ul>
+#}
+
 {% endblock %}

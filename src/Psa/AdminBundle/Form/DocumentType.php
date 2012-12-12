@@ -12,8 +12,8 @@ class DocumentType extends AbstractType
         $builder
             ->add('path',"file")
             ->add('description')
-            ->add('date_upload')
-            ->add('user')
+            ->add('date_upload',null,array("attr"=>array("style"=>"visibility:hidden")))
+            ->add('user',null,array("attr"=>array("style"=>"visibility:hidden")))
         ;
     }
 

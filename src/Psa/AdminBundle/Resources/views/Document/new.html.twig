@@ -1,20 +1,46 @@
 {% extends "PsaAdminBundle::layout.html.twig" %}
 
 {% block main %}
-<h1>Document creation</h1>
 
-<form action="{{ path('document_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit">Create</button>
-    </p>
-</form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('document') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <div id="central" class="mains">
+            <div>
+                    <h2>Créer un document</h2>
+
+                    <form action="{{ path('document_create') }}" method="post" {{ form_enctype(form) }}>
+                        {#{{ form_widget(form) }}#}
+
+                            <fieldset class="main clearfix">
+                                    <p>
+                                            {{ form_widget(form.path,{ 'attr' : { 'style':'visibility:hidden;width:0px' } }) }}
+                                            <a id="load_document" href="javascript:onclick=document.getElementById('psa_adminbundle_documenttype_path').click()" title="Charger un document">
+                                                    <span>&gt; Charger un document</span>
+                                            </a>
+
+                                    </p>
+                                    <p>
+
+                                            {{ form_label(form.description, "Déscription") }} 
+                                            {{ form_widget(form.description) }}
+
+                                    </p>
+
+                            </fieldset>
+
+
+                            <fieldset class="third">
+
+                                    {# <span><span>*</span> champs obligatoire</span>#}
+
+                                    <a href="{{ path('document') }}" title="Revenir à la liste">&lt;&lt; Revenir à la liste</a>
+
+                                    <button type="submit" value="edit" class="create"/>
+                                    {{ form_rest(form) }}
+                            </fieldset>  
+
+                    </form>
+        
+            </div>
+        </div>
+
 {% endblock %}
