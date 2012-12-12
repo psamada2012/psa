@@ -1,13 +1,37 @@
 {% extends "PsaAdminBundle::layout.html.twig" %}
 
 {% block main %}
-	Gérer texte qui somme nous
-	<form action="{{ path('pagemeta_update', { 'id': page_meta_about.id }) }}" method="post" {{ form_enctype(edit_form_about) }}>
-		{{ form_widget(edit_form_about) }}
-		<p>
-			<button type="submit">Enregistrer Texte Qui somme nous</button>
-		</p>
-	</form>
+
+    <div id="central" class="mains">
+            <div>
+                
+                <h2>Gérer texte qui somme nous</h2>
+                <form action="{{ path('pagemeta_update', { 'id': page_meta_about.id }) }}" method="post" {{ form_enctype(edit_form_about) }}>
+                        {#{{ form_widget(edit_form_about) }}#}
+
+
+                                <fieldset class="main clearfix">
+                                        <p>
+
+                                                {{ form_label(edit_form_about.value, "Déscription") }} 
+                                                {{ form_widget(edit_form_about.value) }}
+
+                                        </p>
+
+                                </fieldset>
+
+
+                                <fieldset class="third">
+
+                                        {# <span><span>*</span> champs obligatoire</span>#}
+                                        <button type="submit" value="edit" class="edit"/>
+                                        {{ form_rest(edit_form_about) }}
+                                </fieldset>
+                </form>
+        
+            </div>
+        </div>
+        
 {% endblock %}
 
 

@@ -1,13 +1,37 @@
 {% extends "PsaAdminBundle::layout.html.twig" %}
 
 {% block main %}
-    Gérer texte accueil
-	<form action="{{ path('pagemeta_update', { 'id': page_meta_accueil_texte.id }) }}" method="post" {{ form_enctype(edit_form_accueil_texte) }}>
-		{{ form_widget(edit_form_accueil_texte) }}
-		<p>
-			<button type="submit">Enregistrer Texte Accueil</button>
-		</p>
-	</form>
+
+    <div id="central" class="mains">
+            <div>
+
+                    <h2>Gérer texte accueil</h2>
+                    <form action="{{ path('pagemeta_update', { 'id': page_meta_accueil_texte.id }) }}" method="post" {{ form_enctype(edit_form_accueil_texte) }}>
+                            {#{{ form_widget(edit_form_accueil_texte) }}#}
+
+                            <fieldset class="main clearfix">
+                                    <p>
+
+                                            {{ form_label(edit_form_accueil_texte.value, "Déscription") }} 
+                                            {{ form_widget(edit_form_accueil_texte.value) }}
+
+                                    </p>
+
+                            </fieldset>
+
+
+                            <fieldset class="third">
+
+                                    {# <span><span>*</span> champs obligatoire</span>#}
+                                    <button type="submit" value="edit" class="edit"/>
+                                    {{ form_rest(edit_form_accueil_texte) }}
+                            </fieldset>
+                    </form>
+                    
+            </div>
+        </div>
+                    
+                    
 {% endblock %}
 
 
