@@ -3,6 +3,7 @@
 namespace Psa\AdminBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\EntityManager;
 
 /**
  * ArticleRepository
@@ -12,4 +13,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticleRepository extends EntityRepository
 {
+	
+	public function search(EntityManager $em,$qsearch = null)
+	{
+		$sql   =  "SELECT a FROM PsaAdminBundle:Article a ";
+		
+		if($qsearch != null){
+			$sql	.=	"WHERE a.titre LIKE '%$qsearch%' OR a.contenu LIKE '%$qsearch%'" ;
+		}
+		
+		$sql .= "ORDER BY a.datePublication DESC";
+		$query =  $em->createQuery($sql);
+		$resultats = $query->getResult();
+		return $resultats;
+	}
+	
 }

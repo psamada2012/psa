@@ -43,12 +43,11 @@
 			<!-- REGION SEARCH -->
 			<div class="search-bar">              
 				<div class="mini-search">
-					<form id="search_mini_form" action="http://marechal.oxfoz.net/catalogsearch/result/" method="get">
+					<form id="search_mini_form" action="{{path('PsaPageBundle_archive')}}" method="get">
 						<fieldset>
 							<legend>Search Site</legend>
 							<input autocomplete="off" id="search" class="input-text" name="q" value="Rechercher ..." type="text">
 							<input src="{{asset('bundles/psapage/images/btn_go.gif')}}" alt="Lancer" type="image">
-							<div style="display: none;" id="search_autocomplete" class="search-autocomplete"></div>
 						</fieldset>
 					</form>
 				</div>

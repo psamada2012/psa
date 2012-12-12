@@ -1,0 +1,57 @@
+{% extends "PsaAdminBundle::layout.html.twig" %}
+
+{% block main %}
+
+
+	
+<div class="content-list-article">
+<h1 class="titre-list">Slide list</h1>
+
+<!-- REGION SLIDE -->
+	<div class="homeContent" style="margin:20px 100px">
+		<ul class="slideshow">
+		{% for entity in entities %}
+		  <li if {% if loop.first %} class="show" {%endif%} ><img width="685" height="316" src="{{ asset(entity.src) }}" alt="image slide" /></li>
+		{% endfor %}
+		</ul>
+	</div>   
+<!-- END REGION SLIDE -->
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Src</th>
+            <th>Tri</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr {%if loop.index is divisibleby(2)%} class="vert-fonc" {%else%}class="vert-clair"{%endif%} >
+            <td><img src="{{ asset(entity.src) }}" width="100px"/></td>
+            <td>{{ entity.tri }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('slide_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('slide_new') }}">
+            + Ajouter Image
+        </a>
+    </li>
+</ul>
+</div>
+{% endblock %}
+{% block javascript %}
+	<script type="text/javascript" src="{{asset('bundles/psapage/js/jquery-1.6.2.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('bundles/psapage/js/image_slide.js')}}"></script>
+{% endblock %}	

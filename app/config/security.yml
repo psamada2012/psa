@@ -24,7 +24,7 @@ security:
             form_login:
                 provider: fos_userbundle
                 remember_me: true
-                default_target_path: /admin/profile
+                default_target_path: /admin
             remember_me: 
                 key: %secret%
             anonymous: true

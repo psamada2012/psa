@@ -17,3 +17,7 @@ PsaAdminBundle_document:
 PsaAdminBundle_message:
     resource: "@PsaAdminBundle/Resources/config/routing/message.yml"
     prefix:   /message
+
+PsaAdminBundle_slide:
+    resource: "@PsaAdminBundle/Resources/config/routing/slide.yml"
+    prefix:   /slide

@@ -4,16 +4,13 @@
 
 					
 						<!-- REGION SLIDE -->
-						<div class="homeContent">
-							<!-- <object data="{{asset('bundles/psapage/images/slideshow_marechal.swf')}}" id="marechalHome" type="application/x-shockwave-flash" height="370" width="685"><param value="true" name="play"><param value="true" name="loop"><param value="false" name="menu"><param value="best" name="quality"><param value="tl" name="salign"><param value="transparent" name="wmode"><param value="false" name="allowfullscreen"><param value="always" name="allowscriptaccess"><param value="all" name="allownetworking"><param value="urlLink=http://marechal.oxfoz.net/notre-charte-d-engagement/" name="flashvars"></object>  -->
-							<ul class="slideshow">
-							  <li class="show"><img width="685" height="316" src="{{asset('bundles/psapage/slides/1.jpg')}}" alt="image one" rel="description image 1" /></li>
-							  <li><img width="685" height="316" src="{{asset('bundles/psapage/slides/2.jpg')}}" alt="image two" rel="description image 1"/></li>
-							  <li><img width="685" height="316" src="{{asset('bundles/psapage/slides/3.jpg')}}" alt="image three" rel="description image 1"/></li>
-							  <li><img width="685" height="316" src="{{asset('bundles/psapage/slides/4.jpg')}}" alt="image four" rel="description image 1"/></li>
-							  <li><img width="685" height="316" src="{{asset('bundles/psapage/slides/5.jpg')}}" alt="image five" rel="description image 1"/></li>
-							</ul>
-						</div>   
+							<div class="homeContent">
+								<ul class="slideshow">
+								{% for slide in slides %}
+								  <li if {% if loop.first %} class="show" {%endif%} ><img width="685" height="316" src="{{ asset(slide.src) }}" alt="image slide" /></li>
+								{% endfor %}
+								</ul>
+							</div>   
 						<!-- END REGION SLIDE -->	
 						
 						<!-- REGION TEXT -->	

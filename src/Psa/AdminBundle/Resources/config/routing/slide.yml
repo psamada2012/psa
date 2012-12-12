@@ -1,0 +1,30 @@
+slide:
+    pattern:  /
+    defaults: { _controller: "PsaAdminBundle:Slide:index" }
+
+slide_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PsaAdminBundle:Slide:show" }
+
+slide_new:
+    pattern:  /new
+    defaults: { _controller: "PsaAdminBundle:Slide:new" }
+
+slide_create:
+    pattern:  /create
+    defaults: { _controller: "PsaAdminBundle:Slide:create" }
+    requirements: { _method: post }
+
+slide_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PsaAdminBundle:Slide:edit" }
+
+slide_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PsaAdminBundle:Slide:update" }
+    requirements: { _method: post }
+
+slide_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PsaAdminBundle:Slide:delete" }
+    requirements: { _method: post }

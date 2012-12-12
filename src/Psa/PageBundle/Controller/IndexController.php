@@ -11,9 +11,16 @@ class IndexController extends Controller
     public function indexAction()
     {
 		$em = $this->getDoctrine()->getEntityManager();
-		$repPageMeta = $em->getRepository('PsaAdminBundle:PageMeta');
-
+		
+		//slide
+		$slides = $em->getRepository('PsaAdminBundle:Slide')->findBy(
+			$criteres  	= array(),
+			$order		= array("tri"=>"asc")
+		);
+		$aParam["slides"] = $slides;
+		
 		//Texte Accueil
+		$repPageMeta = $em->getRepository('PsaAdminBundle:PageMeta');
         $page_meta_accueil_texte = $repPageMeta->findOneBy(array("cle"=>"accueil-texte"));
 
         if (!$page_meta_accueil_texte) {

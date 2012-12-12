@@ -99,7 +99,8 @@ class ArticleController extends Controller
                     $this->get('session')->setFlash('info', $file_uploaded["error"]);
                 }
             }
-            
+            $entity->setDatePublication(new \Datetime());
+			
             $em->persist($entity);
             $em->flush();
 
@@ -150,7 +151,9 @@ class ArticleController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Article entity.');
         }
-
+		
+		$oldImage1	=	$entity->getImage1();
+		
         $editForm   = $this->createForm(new ArticleType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
@@ -176,6 +179,7 @@ class ArticleController extends Controller
                     $image1 = "images/". $file_uploaded["fichier"];
                     $entity->setImage1($image1);
                 }  else {
+					$entity->setImage1($oldImage1);
                     $this->get('session')->setFlash('info', $file_uploaded["error"]);
                 }
             }

@@ -11,11 +11,8 @@ class ArchiveController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-
-         $articles = $em->getRepository('PsaAdminBundle:Article')->findBy(
-                    $criteres	= array(),
-                    $order		= array("datePublication"=>"desc")
-            );
+		$qsearch = $this->getRequest()->query->get("q",null);
+        $articles = $em->getRepository('PsaAdminBundle:Article')->search($em,$qsearch);
         
         $aParam['articles']=$articles;
         
