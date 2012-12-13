@@ -11,7 +11,7 @@ class PageMetaType extends AbstractType
     {
         $builder
             ->add('cle',null,array("attr"=>array("style"=>"visibility:hidden")))
-            ->add('value')
+            ->add('value',null,array("attr"=>array("class"=>"tinymce")));
         ;
     }
 

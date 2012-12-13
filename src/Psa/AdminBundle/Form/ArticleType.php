@@ -11,7 +11,7 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('contenu')
+            ->add('contenu',null,array("attr"=>array("class"=>"tinymce")))
             ->add('image1',"file",array("required"=>false))
             ->add('datePublication',null,array("attr"=>array("style"=>"visibility:hidden")))
             ->add('user',null,array("attr"=>array("style"=>"visibility:hidden")))
