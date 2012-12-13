@@ -154,7 +154,7 @@ class SlideController extends Controller
             throw $this->createNotFoundException('Unable to find Slide entity.');
         }
 
-		$oldSrc    = $entity->getSrc();
+	$oldSrc    = $entity->getSrc();
         $editForm   = $this->createForm(new SlideType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
@@ -164,38 +164,39 @@ class SlideController extends Controller
 
         if ($editForm->isValid()) {
 			
-			if (isset($_FILES["psa_adminbundle_slidetype"]['size']["src"]) && $_FILES["psa_adminbundle_slidetype"]['size']["src"]>0) { 
-              
+            if (isset($_FILES["psa_adminbundle_slidetype"]['size']["src"]) && $_FILES["psa_adminbundle_slidetype"]['size']["src"]>0) { 
+
                 $params['directory']        = $this->container->getParameter("directory_images");
                 $params['tailleMaxi']       = $this->container->getParameter("taille_maxi_images");
                 $params['allowedExtension'] = $this->container->getParameter("extension_images");
                 $params['inputName']        = "psa_adminbundle_slidetype";
                 $params['inputName2']       = "src";
-                
+
                 $helper = $this->get("admin.helper.core");
                 $file_uploaded = $helper->uploadFile($params);
-                
-                 //Upload
+
+                //Upload
                 if ($file_uploaded["success"]== true) {
                     $path = "images/".$file_uploaded["fichier"];
                     $entity->setSrc($path);
-                }  else {
+                }else {
                     $entity->setSrc($oldSrc);
                     $this->get('session')->setFlash('error', $file_uploaded["error"]);
                 }
+                
+            }else {
+                $entity->setSrc($oldSrc);
             }
 			
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('slide'));
+            
+        }else{
+            $this->get('session')->setFlash('error',"Donnée non validé");
         }
 
-        return $this->render('PsaAdminBundle:Slide:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+       return $this->redirect($this->generateUrl('slide'));
     }
 
     /**

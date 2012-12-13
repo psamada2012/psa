@@ -24,7 +24,7 @@ class Slide
     /**
      * @var string $src
      *
-     * @ORM\Column(name="src", type="string", length=255)
+     * @ORM\Column(name="src", type="string", length=255, nullable=true)
      */
     private $src;
 
