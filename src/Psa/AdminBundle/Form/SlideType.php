@@ -10,7 +10,7 @@ class SlideType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('src','file')
+            ->add('src','file',array("required"=>false))
             ->add('tri')
         ;
     }

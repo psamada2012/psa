@@ -38,6 +38,13 @@
 	padding:10px 0;
 }
 
+#central form fieldset.slide{
+	float:left;
+	width:920px;
+	height:320px;
+	border-bottom:1px solid #c4c4c4;
+	padding:10px 0;
+}
 
 #central form fieldset.second{
 	width:300px;
@@ -105,7 +112,7 @@
 	top:260px;
 	left:0px;
 	font-size:12px;
-	color:#2e85bc;
+	color:#4F8100;
 	border-bottom:1px dotted #2e85bc;
 	text-decoration:none;
 }
@@ -116,6 +123,41 @@
 #central form fieldset.second > p:first-child + p{
 	margin-bottom:0;
 }
+
+#central form fieldset.slide label{
+	padding-top:5px;
+}
+
+#central form fieldset.slide p{
+	position:relative;
+	margin-left:29px;
+}
+#central form fieldset.slide > p:first-child{
+	height:285px;
+}
+#central form fieldset.slide > p:first-child img{
+	position:absolute;
+	top:0;
+	/*left:149px;*/
+	border:1px solid #a8a8a8;
+}
+#central form fieldset.slide > p:first-child a{
+	position:absolute;
+	top:270px;
+	left:0px;
+	font-size:12px;
+	color:#4F8100;
+	border-bottom:1px dotted #2e85bc;
+	text-decoration:none;
+}
+
+#central form fieldset.slide > p:first-child a:hover{
+	border-bottom-style:solid;
+}
+#central form fieldset.slide > p:first-child + p{
+	margin-bottom:0;
+}
+
 #central form fieldset.first textarea{
 	width:550px;
 	height:200px;
