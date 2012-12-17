@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"><head>
-    <title> Livraison de panier de fruits et légumes frais à Lyon : Maréchal Fraîcheur </title>		
+        <title> {% block title %} PSA Madagascar - Administration{% endblock %} </title>		
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
 	<meta name="description" content="bla bla">
 	<meta name="keywords" content="bla, bla">
-	<meta name="robots" content="INDEX,FOLLOW">
+	<meta name="robots" content="NONE">
 	
-	<link rel="icon" href="http://marechal.oxfoz.net/skin/frontend/default/marechal/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="http://marechal.oxfoz.net/skin/frontend/default/marechal/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="{{ asset('bundles/psapage/images/favicon.ico')}}" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('bundles/psapage/images/favicon.ico')}}" type="image/x-icon">
 	<meta name="google-site-verification" content="Tdt5ZB3f9eNu5_VoV5WvbGLpbzhzkH_-oamTrJ-PHbQ">
 
 	<style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style>
@@ -26,7 +26,7 @@
 
 	<style media="screen" type="text/css">#myContent {visibility:hidden}</style>
 
-<body class=" cms-index-index cms-accueil" style="background-image:none">
+        <body class=" cms-index-index cms-accueil" style="background-image:none">
     <noscript>
         <div class="noscript">
             <div class="noscript-inner">
@@ -48,6 +48,22 @@
 		<div class="container">
 			
 			
+			<!-- REGION SEARCH -->
+			<div class="user-info-bar">              
+				<div class="user-info">
+                                    <div id="userInfo">
+                                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'PsaUserBundle') }} |
+                                            <a href="{{ path('fos_user_security_logout') }}">
+                                                {{ 'layout.logout'|trans({}, 'PsaUserBundle') }}
+                                            </a>
+                                        {% else %}
+                                            {{ 'layout.logged_in_as_anonymous'|trans({},'PsaUserBundle') }} |
+                                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'PsaUserBundle') }}</a>
+                                        {% endif %}
+                                    </div>
+				</div>
+			</div>	
 			
 			<!-- REGION HEADER -->
 			<div class="header">
@@ -191,7 +207,7 @@
 			
 			<!-- REGION SCRIPT !-->
 			{% block javascript %}
-						
+
 			{% endblock %}	
 			<!-- END REGION SCRIPT !-->
 			

@@ -29,12 +29,12 @@
 
                         <fieldset class="third">
                                 
-                                {# <span><span>*</span> champs obligatoire</span>#}
-
+                                <span class="diso">{{ form_errors(edit_form) }}</span> 
+                                   {{ form_rest(edit_form) }}
                                 <a href="{{ path('document') }}" title="Revenir à la liste">&lt;&lt; Revenir à la liste</a>
 
                                 <button type="submit" value="edit" class="edit"/>
-                                {{ form_rest(edit_form) }}
+                                
                         </fieldset>
                     </form>
                     <form action="{{ path('document_delete', { 'id': entity.id }) }}" method="post">

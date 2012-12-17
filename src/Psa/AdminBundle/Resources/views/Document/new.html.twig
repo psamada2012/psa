@@ -30,12 +30,12 @@
 
                             <fieldset class="third">
 
-                                    {# <span><span>*</span> champs obligatoire</span>#}
-
+                                    <span class="diso">{{ form_errors(form) }}</span> 
+                                    {{ form_rest(form) }}
                                     <a href="{{ path('document') }}" title="Revenir à la liste">&lt;&lt; Revenir à la liste</a>
 
                                     <button type="submit" value="edit" class="create"/>
-                                    {{ form_rest(form) }}
+                                    
                             </fieldset>  
 
                     </form>

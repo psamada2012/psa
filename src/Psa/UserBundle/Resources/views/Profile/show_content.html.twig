@@ -1,0 +1,31 @@
+
+    <div id="central" class="mains">
+                
+                <h2>Mon profile</h2>
+
+                <table style="width:820 ">
+                    <tbody>
+                        {#
+                        <tr class="element">
+                            <th>Id</th>
+                            <td class="input"><input class="message" type="text" style="readonly:'readonly'" value="{{ entity.id }}"/></td>
+                        </tr
+                        #}
+                        <tr class="element">
+                            <th class="th">{{ 'profile.show.username'|trans({}, 'PsaUserBundle') }}</th>
+                            <td class="input"><input class="message" type="text" readonly="readonly" value="{{ user.username }}"/></td>
+                        </tr>
+                        <tr class="element">
+                            <th class="th">{{ 'profile.show.email'|trans({}, 'PsaUserBundle') }}</th>
+                            <td class="input"><input class="message" type="text" readonly="readonly" value="{{ user.email }}"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+
+{#
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
+</div>
+#}

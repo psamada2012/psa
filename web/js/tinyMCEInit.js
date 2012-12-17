@@ -1,4 +1,11 @@
 $(function() {
+    
+    //************** START : FIND PATH *********************
+    
+    var racine_pathname = getRacinePathname(); //--> /psa/web ou /web
+    //alert(racine_pathname);
+    //************** END *********************
+
     //init tinyMCE editors        
 	var pattern_dns_url = 'dev.moobz.fr/adresse'; 
     var rep_stockage    = 'adresse'
@@ -25,7 +32,7 @@ $(function() {
     }
     $('textarea.tinymce').tinymce({
         // Location of TinyMCE script
-        script_url : '/web/js/tiny_mce/tiny_mce.js',
+        script_url : racine_pathname + '/js/tiny_mce/tiny_mce.js',
 
 
         // General options
@@ -42,7 +49,7 @@ $(function() {
         theme_advanced_resizing : false,
 
         // Example content CSS (should be your site CSS)
-        content_css : '/web/css/tinyMCE.css',
+        content_css : racine_pathname + '/css/tinyMCE.css',
         relative_urls:false,
 
         // Drop lists for link/image/media/template dialogs
@@ -81,7 +88,7 @@ $(function() {
                 //$('#' + tinyMCE.activeEditor.id + '_wordcount').html("<span>"+remaining+"</span> caractères restants <br/><span>" + tinyMCEText.split(' ').length + "</span> mot(s)<br/><span>" + tinyMCEText.length + "</span> caractère(s)<br/>"+paragraphCount+" paragraphe(s)");
                 $('#' + tinyMCE.activeEditor.id + '_wordcount').html("<span>" + tinyMCEText.split(' ').length + "</span> mot(s)<br/><span>" + tinyMCEText.length + "</span> caractère(s)<br/>"+paragraphCount+" paragraphe(s)");
             });
-        },
+        }
     });
 });
 
@@ -100,4 +107,16 @@ countParagraphs = function(text){
 showWordCount = function(activeEdId) {
     $('#'+activeEdId+'_parent.mceEditor').after('<div id="' + activeEdId + '_wordcount" class="tinyMCEWordcount"></div>');
     return true;
+}
+
+
+function getRacinePathname(){
+    var pathname = window.location.pathname;
+    var keyword_path = "/app_"; //pour app_dev ou app_prod
+    var index_path = pathname.indexOf(keyword_path);
+    keyword_path = "/admin"; //si pas de app_xxx, c'est route admin
+
+    index_path = index_path>0?index_path:pathname.indexOf(keyword_path);
+
+    return pathname.substr(0, index_path); //--> /psa/web ou /web
 }

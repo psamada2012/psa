@@ -1,0 +1,54 @@
+{% form_theme form theme %}
+
+
+    <div id="central" class="mains">
+            <div>
+                        <h2>Ajouter un utilisateur</h2>
+                        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+                            {#{{ form_widget(form) }} #}       
+                            <fieldset class="standard clearfix">
+                                    {#<p>
+                                            {{ form_label(form.user,"Votre profile")}}
+                                            {{ form_widget(form.user) }}
+                                    </p>#}
+                                    <p>
+                                            {{ form_label(form.username,"Nom d'utilisateur")}}
+                                            {{ form_widget(form.username) }}
+                                    </p>
+                                    <p>
+                                            {{ form_label(form.email,"Adresse mail") }}
+                                            {{ form_widget(form.email) }}
+                                    </p>
+                                    <p>
+                                            {{ form_label(form.plainPassword.first,"Nouveau mot de passe") }}
+                                            {{ form_widget(form.plainPassword.first) }}
+                                    </p>
+                                    <p>
+                                            {{ form_label(form.plainPassword.second,"Retaper votre mot de passe") }}
+                                            {{ form_widget(form.plainPassword.second) }}
+                                    </p>
+                                    <p><span class="diso">{{ form_errors(form) }}</span> </p>
+                            </fieldset>
+                            <fieldset class="third">
+                                    {{ form_rest(form) }}
+                                    {# <span><span>*</span> champs obligatoire</span>#}
+                                    <button type="submit" value="edit" class="standardCreate"/>
+                            </fieldset>    
+                            {#   
+                            <div>
+                                <input type="submit" value="{{ 'change_password.submit'|trans({}, 'FOSUserBundle') }}" />
+                            </div>
+                            #}
+                        </form>
+
+                </div>
+        </div>
+
+{#
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+    </div>
+</form>
+#}

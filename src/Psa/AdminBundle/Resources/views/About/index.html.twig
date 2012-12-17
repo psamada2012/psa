@@ -22,10 +22,11 @@
 
 
                                 <fieldset class="third">
-
+                                        <span class="diso">{{ form_errors(edit_form_about) }}</span> 
+                                        {{ form_rest(edit_form_about) }}
                                         {# <span><span>*</span> champs obligatoire</span>#}
                                         <button type="submit" value="edit" class="edit"/>
-                                        {{ form_rest(edit_form_about) }}
+                                        
                                 </fieldset>
                 </form>
         

@@ -83,6 +83,7 @@ layout:
     login: Login
     register: Register
     logged_in_as: Logged in as %username%
+    logged_in_as_anonymous: Anonymous user  
 
 # Form field labels
 fos_user_group_form_name: "Group name:"
@@ -102,3 +103,6 @@ fos_user_resetting_form_new_second: "Verification:"
 fos_user_change_password_form_new_first: "New password:"
 fos_user_change_password_form_new_second: "Verification:"
 fos_user_change_password_form_current: "Current password:"
+
+fos_user_profile_form_username: "Username:"
+fos_user_profile_form_email: "Email:"

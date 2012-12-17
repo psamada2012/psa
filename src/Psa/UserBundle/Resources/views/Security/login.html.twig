@@ -1,22 +1,42 @@
 {% extends "PsaUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-{% if error %}
-    <div>{{ error|trans({}, 'PsaUserBundle') }}</div>
-{% endif %}
-locale : {{ app.session.locale }}
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% if error %}
+        <div>{{ error|trans({}, 'PsaUserBundle') }}</div>
+    {% endif %}
 
-    <label for="username">{{ 'security.login.username'|trans({}, 'PsaUserBundle') }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <div id="central" class="logins">
+            <form action="{{ path("fos_user_security_check") }}" method="post">
 
-    <label for="password">{{ 'security.login.password'|trans({}, 'PsaUserBundle') }}</label>
-    <input type="password" id="password" name="_password" />
-
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'PsaUserBundle') }}</label>
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'PsaUserBundle') }}" />
-</form>
+                    <fieldset id="login" class="login">
+                            <p>
+                                <label for="username">{{ 'security.login.username'|trans({}, 'PsaUserBundle') }}</label>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                            </p>
+                            <p>
+                                <label for="password">{{ 'security.login.password'|trans({}, 'PsaUserBundle') }}</label>
+                                <input type="password" id="password" name="_password" />
+                            </p>
+                            <p style="text-align: left;padding-left:150px;">
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'PsaUserBundle') }}</label>
+                            </p>
+                    </fieldset>
+                    <fieldset id="third" class="third">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            <div class="generic-btn">
+                                    <span class="btn-left">
+                                            <span class="btn-right">
+                                                <input type="submit" id="_submit" class="connect" name="_submit" value=""/>
+                                            </span>
+                                    </span>
+                            </div>
+                            <div class="error"> 
+                                    <c:if test="${not empty resultError}">
+                                            <label class="failure"><c:out value="${resultError}"/></label>
+                                    </c:if>
+                            </div>
+                    </fieldset>
+            </form>
+        </div>
 {% endblock fos_user_content %}

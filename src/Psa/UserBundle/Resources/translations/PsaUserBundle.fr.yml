@@ -14,6 +14,7 @@ group:
 # Security
 "Bad credentials": Nom d'utilisateur ou mot de passe incorrect
 
+
 # Security
 security:
     login:
@@ -84,6 +85,7 @@ layout:
     login: Connexion
     register: Enregistrer
     logged_in_as: Connecté en tant que %username%
+    logged_in_as_anonymous: Utilisateur anonyme
 
 # Form field labels
 fos_user_group_form_name: "Nom du groupe :"
@@ -104,3 +106,6 @@ fos_user_resetting_form_new_second: "Vérification:"
 fos_user_change_password_form_new_first:    "Nouveau mot de passe :"
 fos_user_change_password_form_new_second:   "Vérification :"
 fos_user_change_password_form_current:  "Mot de passe actuel :"
+
+fos_user_profile_form_user_username:             "Nom d'utilisateur :"
+fos_user_profile_form_user_email:                "Adresse e-mail :"

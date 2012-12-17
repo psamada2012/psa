@@ -347,3 +347,151 @@ div.element > a{
 div.element > a:hover{
 	border-bottom-style:solid;
 }
+
+.user-info{
+	position:relative;z-index:9999;
+	float:right;width:300px;
+	background:url(../images/commons/header/userInfo.png) no-repeat 0 50%;
+	padding-left:45px;padding-top:0px;height:27px;
+}
+.user-info-bar{
+	position:absolute;
+	right:0px;margin-top:7px;
+	margin-bottom:0px;line-height:1.25em;
+	float:right;padding-top:0px;padding-right:10px;
+	padding-bottom:0px;padding-left:0px;background:none;
+        font-size: 12px;
+}
+
+#userInfo{
+    padding-top: 3px;
+}
+
+#central form fieldset.login{
+	width:500px;
+	height:110px;
+	/*border-bottom:1px solid #c4c4c4;*/
+        text-align: left;
+	padding:10px 0;
+        margin-left: 25%;
+        margin-right: 20%;
+}
+
+#central form fieldset.login p > label:first-child{
+	width:150px;
+	display:inline-block;
+}
+#central form fieldset.login p input[type="text"],
+#central form fieldset.login p input[type="password"]{
+	width:250px;
+	height:33px;
+	line-height:33px;
+	border:1px solid #a8a8a8;
+	padding:0 5px;
+}
+#central form fieldset.login p input[type="text"]:hover,
+#central form fieldset.login p input[type="password"]:hover,
+#central form fieldset.login p input[type="text"]:focus,
+#central form fieldset.login p input[type="password"]:focus{
+	border-color:#383838;
+}
+#central form p input[type="text"]::-moz-focus-inner,
+#central form p input[type="text"]::-moz-focus-inner
+{
+    padding:0; margin:0;
+}
+#central form p input[type="text"]#nb ,
+#central form p input[type="password"]#nb{
+	width:27px;
+	height:34px;
+	text-align:center;
+}
+
+#central.logins{
+	text-align: center;
+        height: 300px;
+}
+
+#central.logins form{
+	width: 600px;
+        padding-left: 100px;
+}
+
+fieldset.login form p.remember input[type="checkbox"],
+fieldset.login form p.remember > label{
+        text-align: right;
+        margin-left: 100px;
+}
+
+fieldset.third div.generic-btn input[type="submit"].connect{
+	position:absolute;
+	left: 420px;
+	top:20px;
+	width:180px;
+	height:39px;
+	background:url(../images/commons/form/submit_connect.gif) 0 0 no-repeat;
+	border:none;
+	cursor:pointer;
+}
+
+
+#central form fieldset.standard{
+	width:500px;
+	/*height:150px;*/
+	border-bottom:1px solid #c4c4c4;
+        text-align: left;
+	padding:10px 0;
+        margin-left: 25%;
+        margin-right: 20%;
+}
+
+#central form fieldset.standard p > label:first-child{
+	width:210px;
+	display:inline-block;
+}
+#central form fieldset.standard p input[type="text"],
+#central form fieldset.standard p input[type="password"],
+#central form fieldset.standard p input[type="email"]{
+	width:250px;
+	height:33px;
+	line-height:33px;
+	border:1px solid #a8a8a8;
+	padding:0 5px;
+}
+
+#central form fieldset.standard p input[type="text"]:hover,
+#central form fieldset.standard p input[type="password"]:hover,
+#central form fieldset.standard p input[type="email"]:hover,
+#central form fieldset.standard p input[type="text"]:focus,
+#central form fieldset.standard p input[type="password"]:focus,
+#central form fieldset.standard p input[type="email"]:focus{
+	border-color:#383838;
+}
+
+#central form fieldset.third button.standardEdit{
+	position:absolute;
+	right:200px;
+	top:20px;
+	width:180px;
+	height:39px;
+	background:url(../images/commons/form/submit_edit.gif) 0 0 no-repeat;
+	border:none;
+	cursor:pointer;
+}
+
+#central form fieldset.third button.standardCreate{
+	position:absolute;
+	right:200px;
+	top:20px;
+	width:180px;
+	height:39px;
+	background:url(../images/commons/form/submit_create.gif) 0 0 no-repeat;
+	border:none;
+	cursor:pointer;
+}
+
+
+span.diso{
+    font-size: 12px;
+    color:#E26703;
+}

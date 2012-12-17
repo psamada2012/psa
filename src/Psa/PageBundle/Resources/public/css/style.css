@@ -132,12 +132,21 @@ ul img {
 #archive ul li {
 	/*height: 100px;*/
 	width: 600px;
-	margin: 0 0 10px;
-	padding: 20px 20px 20px 30px;
+	margin: 0 0 5px;
+	padding: 15px 10px 1px 30px;
 	position: relative;
 }
 #archive ul li span.leaf {
 	/*background-position: 0 10px;*/
+	display: block;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top: 5px;
+	left: 18px;
+}
+/*
+#archive ul li span.leaf {
 	display: block;
 	height: 100px;
 	width: 117px;
@@ -145,6 +154,8 @@ ul img {
 	top: -20px;
 	left: -25px;
 }
+*/
+
 #archive ul li span.links {
 	position: absolute;
 	top: 10px;
@@ -169,12 +180,12 @@ ul img {
 #archive ul li h3 {
 	color: #df7801;
 	/*font-family: 'DeliusSwashCapsRegular';*/
-	letter-spacing: 0px;
+	letter-spacing: 1px;
 	/*line-height: 30px;*/
         line-height:1.17em;
         font-size: 14px;
 	margin: 0 0 6px;
-	padding-left: 48px;
+	padding-left: 30px;
 	text-transform: uppercase;
 	color: #006500;
 }

@@ -15,7 +15,7 @@
                             <fieldset class="slide clearfix">
 
                                     <p>
-                                            <img src="{{asset(entity.src)}}" alt="slide image" width="600" />
+                                            <img src="{{asset(entity.src)}}" alt="slide image" height="260" />
                                             <!--input type="file" id="upload_image" name="upload_image" style="visibility:hidden; height:0px;"/>-->
                                             {{ form_widget(edit_form.src,{ 'attr' : { 'id' : 'upload_image','style':'visibility:hidden' } }) }}
                                             <a id="load_slide" href="javascript:onclick=document.getElementById('psa_adminbundle_slidetype_src').click()" title="Charger une image slide">
@@ -32,14 +32,14 @@
                             </fieldset>        
 
                             <fieldset class="third">
-
+                                    <span class="diso">{{ form_errors(edit_form) }}</span> 
                                     {# <span><span>*</span> champs obligatoire</span>#}
-
+                                    {{ form_rest(edit_form) }}
                                     <a href="{{ path('slide') }}" title="Revenir à la liste">&lt;&lt; Revenir à la liste</a>
 
                                     <button type="submit" value="edit" class="edit"/>
                             </fieldset>
-                             {{ form_rest(edit_form) }}
+                             
                     </form>
             </div>
         </div>
