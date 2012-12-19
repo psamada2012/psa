@@ -3,10 +3,11 @@
 {% block main %}
 					
     <div id="page" >
-        <div class="article" style="height: auto">
+        <div class="show-detail" style="height: auto">
                 <h2 class="title">{{article.titre|raw}}</h2>
                 <img  src="{{asset(article.image1)}}" alt="" width="250" height="250" class="alignleft" />
                 <p>{{article.contenu|raw}} </p>
+                <p style="text-align: right;"><span class="author">{{article.user.username}} | {{article.datePublication|date("j/m/Y")}}</span></p>
         </div>
     </div>
 

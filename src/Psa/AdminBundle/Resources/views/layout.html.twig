@@ -53,7 +53,8 @@
 				<div class="user-info">
                                     <div id="userInfo">
                                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'PsaUserBundle') }} |
+                                            Utilisateur <a class="profile" href="{{ path('fos_user_profile_show') }}">{{app.user.username}}</a> | 
+                                            {#{{ 'layout.logged_in_as'|trans({'%username%':  app.user.username}, 'PsaUserBundle') }} |#}
                                             <a href="{{ path('fos_user_security_logout') }}">
                                                 {{ 'layout.logout'|trans({}, 'PsaUserBundle') }}
                                             </a>
@@ -67,7 +68,7 @@
 			
 			<!-- REGION HEADER -->
 			<div class="header">
-				<a id="logo" href="http://marechal.oxfoz.net/"><img src="{{asset('bundles/psapage/images/logo.gif')}}" alt="PSA AADP"></a>
+				<a id="logo" href="{{path('PsaPageBundle_homepage') }}"><img src="{{asset('bundles/psapage/images/logo.gif')}}" alt="PSA AADP"></a>
 			</div>
 			<!-- END REGION HEADER -->
 
@@ -111,47 +112,38 @@
 					<!-- REGION FOOTER LINK -->
 					<ul>
 						<li>
-							<a href="http://marechal.oxfoz.net/qui-sommes-nous/">Accueil     </a>
+                                                    <a href="{{path('PsaPageBundle_homepage') }}" title="Accueil">Accueil     </a>
 						</li>
 						<li class="last">
-							<a href="http://marechal.oxfoz.net/mentions-legales/">A-propos de nous    </a>
+                                                    <a href="{{path('PsaPageBundle_article') }}" title="Article"> Article   </a>
 						</li>
 					</ul>    
 
 					<ul class="footer-links">
-                            <li class="first">
-								<a href="http://marechal.oxfoz.net/contacts/" title="Contactez-nous">Contactez-nous</a>
+                                                        <li class="first">
+                                                            <a href="{{path('PsaPageBundle_about') }}" title="Qui sommes nous"> Qui sommes nous    </a>
+                                                        </li>
+                                                        <li class="last">
+								<a href="{{path('PsaPageBundle_contact') }}" title="Contactez-nous"> Contactez-nous</a>
 							</li>
-							<!-- 
-                            <li class="last">
-								<a href="http://marechal.oxfoz.net/rss/" title="Test RSS" class="link-feed">RSS</a>
-							</li>
-							-->
+
                     </ul>
 					<!-- END REGION FOOTER LINK -->
 					
 					<!-- REGION FOOTER TEXT -->
 					<a target="varien_external" href="http://www.magentocommerce.com/bug-tracking" id="bug_tracking_link"><strong></strong></a> <br>
 					<div id="footer-ref">
-						<!--
-						<a href="http://www.marechal-fraicheur.fr/" title="Livraison fruits et légumes">Agriculture</a> - 
-						<a href="http://www.marechal-fraicheur.fr/nos-paniers.html" title="Paniers de fruits et légumes">Elevage</a> - 
-						<a href="http://www.marechal-fraicheur.fr/nos-fruits-et-legumes-en-cagette.html" title="Cagettes de fruits et légumes">Pêche</a> - 
-						<a href="http://www.marechal-fraicheur.fr/points-relais" title="Points de livraison">Agro-industrie</a> - 
-						<a href="http://www.marechal-fraicheur.fr/notre-charte-d-engagement" title="Charte d'engagement">Foncier</a> - 
-						<a href="http://www.marechal-fraicheur.fr/la-composition-de-nos-paniers" title="Exemples de paniers de fruits et légumes">Exemples de paniers de fruits et légumes</a></div>
-						-->
-						<div itemscope="" itemtype="http://data-vocabulary.org/Organization">
+						<div itemscope="" itemtype="{{path('PsaPageBundle_homepage') }}">
 							<span itemprop="name">Programme Sectoriel Agricole</span>
-							<span itemprop="address" itemscope="" itemtype="http://data-vocabulary.org/Address">
+							<span itemprop="address" itemscope="" itemtype="{{path('PsaPageBundle_homepage') }}">
 								<span itemprop="street-address">Rue num XX</span>
 								<span itemprop="postal-code">CP xxx</span>
 								<span itemprop="locality">Logement</span>
 							</span>
-							- <a href="http://www.psa.fr/" itemprop="url"> http://www.psa.fr </a>.
+							- <a href="{{path('PsaPageBundle_homepage') }}" itemprop="url"> www.psa-mg.org </a>.
 						</div>
 						<p>
-							<a href="http://www.gasysoft.fr/">© 2012 Blablabla. All Rights Reserved.</a>
+							<a href="mailto:gasysoft@gmail.com">© 2012 Blablabla. All Rights Reserved.</a>
 						</p>
 					</div>
 					<!-- END REGION FOOTER TEXT -->

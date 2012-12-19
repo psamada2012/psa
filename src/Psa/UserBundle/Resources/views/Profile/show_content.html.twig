@@ -1,7 +1,7 @@
 
     <div id="central" class="mains">
                 
-                <h2>Mon profile</h2>
+                <h2>Mon profil</h2>
 
                 <table style="width:820 ">
                     <tbody>
@@ -18,6 +18,10 @@
                         <tr class="element">
                             <th class="th">{{ 'profile.show.email'|trans({}, 'PsaUserBundle') }}</th>
                             <td class="input"><input class="message" type="text" readonly="readonly" value="{{ user.email }}"/></td>
+                        </tr>
+                        <tr class="element">
+                            <th class="th"></th>
+                            <td ><a class="simple-link" href="{{ path('fos_user_profile_edit') }}">Editer mon profil</a> | <a class="simple-link" href="{{ path('fos_user_change_password') }}">Changer mot de passe</a></td>
                         </tr>
                     </tbody>
                 </table>

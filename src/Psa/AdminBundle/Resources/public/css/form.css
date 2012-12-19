@@ -367,6 +367,13 @@ div.element > a:hover{
     padding-top: 3px;
 }
 
+#userInfo a.profile{
+    color:#6C4B2D;
+    font-size:14px;
+    font-weight: bold;
+    text-decoration:none;
+}
+
 #central form fieldset.login{
 	width:500px;
 	height:110px;
@@ -494,4 +501,10 @@ fieldset.third div.generic-btn input[type="submit"].connect{
 span.diso{
     font-size: 12px;
     color:#E26703;
+}
+
+a.simple-link{
+    color:#4F8100;
+    font-size:12px;
+    text-decoration:none;
 }

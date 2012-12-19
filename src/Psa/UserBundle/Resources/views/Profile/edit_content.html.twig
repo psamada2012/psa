@@ -3,7 +3,7 @@
 
     <div id="central" class="mains">
             <div>
-                        <h2>Editer mon profile</h2>
+                        <h2>Editer mon profil</h2>
                         <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
                             {#{{ form_widget(form) }} #}       
                             <fieldset class="standard clearfix">
@@ -12,22 +12,22 @@
                                             {{ form_widget(form.user) }}
                                     </p>#}
                                     <p>
-                                            {{ form_label(form.user.username,"Nom d'utilisateur")}}
+                                            {{ form_label(form.user,"Nom d'utilisateur")}}
                                             {{ form_widget(form.user.username) }}
                                     </p>
                                     <p>
-                                            {{ form_label(form.user.email,"Adresse mail") }}
+                                            {{ form_label(form.user,"Adresse mail") }}
                                             {{ form_widget(form.user.email) }}
                                     </p>
                                     <p>
-                                        {{ form_label(form.current,"Entrez votre mot de passe") }}
+                                        {{ form_label(form,"Entrez votre mot de passe") }}
                                         {{ form_widget(form.current) }}
                                     </p>
                                     <p><span class="diso">{{ form_errors(form) }}</span> </p>
                             </fieldset>
                             <fieldset class="third">
                                     {{ form_rest(form) }}
-                                    {# <span><span>*</span> champs obligatoire</span>#}
+                                    <span style="left: 460px;"><a class="simple-link" href="{{ path('fos_user_profile_show') }}">Annuler</a></span>
                                     <button type="submit" value="edit" class="standardEdit"/>
                             </fieldset>    
                             {#   

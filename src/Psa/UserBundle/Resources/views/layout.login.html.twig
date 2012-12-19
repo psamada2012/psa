@@ -1,26 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"><head>
-        <title> {% block title %} PSA Madagascar - Programme Séctoriel Agricole -, visant à moderniser les sécteur agricole, élevage et pêche{% endblock %} </title>		
+        <title> {% block title %} PSA Madagascar - Administration{% endblock %} </title>		
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-	<meta name="description" content="Le Gouvernement malagasy a initié depuis 2007 l’élaboration du Programme Sectoriel Agricole (PSA) incluant les trois sous secteurs agriculture, élevage et pêche. Le PSA doit définir autant la vision à moyen mais aussi à long terme du développement de ces trois sous secteurs.">
-	<meta name="keywords" content="psa, psa caadp, psa\caadp, psa aadp, psa\aadp, psdr, pdda, pddaa, aadp, caadp, psa madagascar, programme séctoriel agricole, caadp madagascar, agriculture, élevage, pêche, agro-industrie, balance commércial, sécurité alimentaire, revenus producteurs, emplois ruraux">
-	<meta name="robots" content="INDEX,FOLLOW">
+	<meta name="description" content="bla bla">
+	<meta name="keywords" content="bla, bla">
+	<meta name="robots" content="NONE">
 	
 	<link rel="icon" href="{{ asset('bundles/psapage/images/favicon.ico')}}" type="image/x-icon">
 	<link rel="shortcut icon" href="{{ asset('bundles/psapage/images/favicon.ico')}}" type="image/x-icon">
 	<meta name="google-site-verification" content="Tdt5ZB3f9eNu5_VoV5WvbGLpbzhzkH_-oamTrJ-PHbQ">
 
 	<style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style>
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/reset.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/boxes.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/menu.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/clears.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/style.css')}}" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/reset.css')}}" media="all"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/boxes.css')}}" media="all"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/menu.css')}}" media="all"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/clears.css')}}" media="all"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/style.css')}}" media="all"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/psa-admin.css')}}" media="all"/>
+        <script type="text/javascript" src="{{asset('bundles/psapage/js/jquery-1.6.2.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/tiny_mce/jquery.tinymce.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/tinyMCEInit.js') }}"></script>
+        
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/psaadmin/css/form.css')}}" media="all"/>
 
 	<style media="screen" type="text/css">#myContent {visibility:hidden}</style>
 
-<body class=" cms-index-index cms-accueil">
+        <body class=" cms-index-index cms-accueil" style="background-image:none">
     <noscript>
         <div class="noscript">
             <div class="noscript-inner">
@@ -37,23 +43,28 @@
             <li><a href="#footer">Aller au pied de page</a></li>
         </ul>
     </div>
-    <div class="tetiere">
+        <div class="tetiere" style="background-image:none">
 		<!-- REGION CONTAINER -->
 		<div class="container">
+			
+			
 			<!-- REGION SEARCH -->
-			<div class="search-bar">              
-				<div class="mini-search">
-					<form id="search_mini_form" action="{{path('PsaPageBundle_archive')}}" method="get">
-						<fieldset>
-							<legend>Search Site</legend>
-							<input autocomplete="off" id="search" class="input-text" name="q" value="Rechercher ..." type="text">
-							<input src="{{asset('bundles/psapage/images/btn_go.gif')}}" alt="Lancer" type="image">
-						</fieldset>
-					</form>
+			<div class="user-info-bar">              
+				<div class="user-info">
+                                    <div id="userInfo">
+                                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                            Utilisateur <a class="profile" href="{{ path('fos_user_profile_show') }}">{{app.user.username}}</a> | 
+                                            {#{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'PsaUserBundle') }} |#}
+                                            <a href="{{ path('fos_user_security_logout') }}">
+                                                {{ 'layout.logout'|trans({}, 'PsaUserBundle') }}
+                                            </a>
+                                        {% else %}
+                                            {{ 'layout.logged_in_as_anonymous'|trans({},'PsaUserBundle') }} |
+                                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'PsaUserBundle') }}</a>
+                                        {% endif %}
+                                    </div>
 				</div>
 			</div>	
-			<!-- END REGION SEARCH -->
-			
 			
 			<!-- REGION HEADER -->
 			<div class="header">
@@ -65,52 +76,35 @@
 			<div class="outline-creator">
 				<div class="toplinks-bar">
 					<div id="navigation">
-						<div>
-							<ul id="menuItems">
-								<li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_homepage') %} class="active" {% endif %}><a href="{{path('PsaPageBundle_homepage')}}"><span>Accueil</span></a></li>
-								<li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_article') %} class="active" {% endif %}><a href="{{path('PsaPageBundle_article')}}"><span>Article</span></a></li>
-								<li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_archive') %} class="active" {% endif %}><a href="{{path('PsaPageBundle_archive')}}"><span>Archive</span></a></li>
-								<li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_document') %} class="active" {% endif %}><a href="{{path('PsaPageBundle_document')}}"><span>Document</span></a></li>
-								<li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_about') %} class="active" {% endif %}><a href="{{path('PsaPageBundle_about')}}"><span>Qui somme nous</span></a></li>
-								<li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_contact') %} class="active" {% endif %}><a href="{{path('PsaPageBundle_contact')}}"><span>Contact</span></a></li>
-							</ul>
-						</div>
 					</div>
 				</div>
 				
 				<!-- REGION CONTENT -->
 				
 					<div class="middle layout-2columns">
-					<!-- REGION FIRST COLUMN -->
-					<div class="col-left sidebar" id="col-left"> 
+                                            <p style="color: red">
+                                                {# On affiche tous les messages flash #}
+                                                {% for key, flash in app.session.getFlashes() %}
+                                                {{ flash }}<br/>
+                                                {% endfor %}
+                                            </p>
+                                            {% block main %}
                                             
-						 <div id="news_sidebar_container">
-							{% render 'PsaPageBundle:Article:widgetDerniersArticles' %}
 
-							<img class="news-paperclip" src="{{asset('bundles/psapage/images/commons/content/paperclip.png')}}" alt="paperclip" />
-							<div class="news-sidebar">
-							  <h3>Useful Links</h3>
-							  <ul>
-								<li><a href="#">First Link</a></li>
-								<li><a href="#">Another Link</a></li>
-								<li><a href="#">And Another</a></li>
-								<li><a href="#">Last One</a></li>
-							  </ul>
-							</div>
-						  </div>
-					</div>
-					<!-- END REGION FIRST COLUMN -->
+                                                        {% for key, message in app.session.getFlashes() %}
+                                                        <div class="{{ key }}">
+                                                            {{ message|trans({}, 'PsaUserBundle') }}
+                                                        </div>
+                                                        {% endfor %}
+
+                                                        <div>
+                                                            {% block fos_user_content %}
+                                                            {% endblock fos_user_content %}
+                                                        </div>    
+                                                
+                                            {% endblock %}	
 					
-					<!-- REGION MAIN COLUMN -->
-					
-					<div class="col-main" id="main">
-					{% block main %}
-						
-					{% endblock %}	
-					</div>
-					<!-- END REGION MAIN COLUMN -->
-					
-				</div>
+                                        </div>
 				
 				<!-- END REGION CONTENT -->
 				
@@ -128,7 +122,7 @@
 
 					<ul class="footer-links">
                                                         <li class="first">
-                                                            <a href="{{path('PsaPageBundle_about') }}" title="Qui sommes nous"> Qui sommes nous    </a>
+                                                            <a href="{{path('PsaPageBundle_about') }}" title="Qui sommes nous"> Qui sommes nous     </a>
                                                         </li>
                                                         <li class="last">
 								<a href="{{path('PsaPageBundle_contact') }}" title="Contactez-nous"> Contactez-nous</a>
@@ -205,7 +199,7 @@
 			
 			<!-- REGION SCRIPT !-->
 			{% block javascript %}
-						
+
 			{% endblock %}	
 			<!-- END REGION SCRIPT !-->
 			

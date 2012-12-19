@@ -10,8 +10,8 @@
                 <h2 class="title">{{article.titre|raw}} ({{article.datePublication|date("j/m/Y")}})</h2> 
                 <img  src="{{asset(article.image1)}}" alt="" width="250" height="250" class="alignleft" />
                 <p>{{article.contenu|raw}} </p>
+                <a style="float: right" href="{{path('PsaPageBundle_article_show',{id:article.id})}}">En savoir plus</a><br/><br/>
         </div>
-            <a style="float: right" href="{{path('PsaPageBundle_article_show',{id:article.id})}}">En savoir plus</a><br/><br/>
         {%endfor%}
     </div>
 
