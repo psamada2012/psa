@@ -1,0 +1,44 @@
+{% extends "PsaPageBundle::layout.html.twig" %}
+
+        
+{% block main %}
+
+    <h3>Album test</h3>
+    <div class="fotorama" data-transition="fade" data-width="680" data-height="460">
+            <a href="{{ asset('gallery/01.jpg')}}"><img src="{{ asset('gallery/thumbs/01.jpg')}}"></a>
+            <a href="{{ asset('gallery/02.jpg')}}"><img src="{{ asset('gallery/thumbs/02.jpg')}}"></a>
+            <a href="{{ asset('gallery/03.jpg')}}"><img src="{{ asset('gallery/thumbs/03.jpg')}}"></a>
+            <a href="{{ asset('gallery/04.jpg')}}"><img src="{{ asset('gallery/thumbs/04.jpg')}}"></a>
+            <a href="{{ asset('gallery/05.jpg')}}"><img src="{{ asset('gallery/thumbs/05.jpg')}}"></a>
+            <a href="{{ asset('gallery/06.jpg')}}"><img src="{{ asset('gallery/thumbs/06.jpg')}}"></a>
+            <a href="{{ asset('gallery/07.jpg')}}"><img src="{{ asset('gallery/thumbs/07.jpg')}}"></a>
+            <a href="{{ asset('gallery/08.jpg')}}"><img src="{{ asset('gallery/thumbs/08.jpg')}}"></a>
+            <a href="{{ asset('gallery/09.jpg')}}"><img src="{{ asset('gallery/thumbs/09.jpg')}}"></a>
+            <a href="{{ asset('gallery/10.jpg')}}"><img src="{{ asset('gallery/thumbs/10.jpg')}}"></a>
+    </div>
+
+     {#
+        <h3>TEST VOALOHANY</h3>
+            <div class="yoxview" >
+                    <a href="{{ asset('gallery/01.jpg')}}"><img src="{{ asset('gallery/thumbs/01.jpg')}}"  title="First image"></a>
+                    <a href="{{ asset('gallery/02.jpg')}}"><img src="{{ asset('gallery/thumbs/02.jpg')}}"  title="Second image"></a>
+                    <a href="{{ asset('gallery/03.jpg')}}"><img src="{{ asset('gallery/thumbs/03.jpg')}}"  title="Three image"></a>
+                    <a href="{{ asset('gallery/04.jpg')}}"><img src="{{ asset('gallery/thumbs/04.jpg')}}"  title="Four image"></a>
+            </div>
+
+        <h3>TEST FAHAROA</h3>
+            <div class="yoxview" >
+                    <a href="{{ asset('gallery/01.jpg')}}"><img src="{{ asset('gallery/thumbs/01.jpg')}}"></a>
+                    <a href="{{ asset('gallery/02.jpg')}}"><img src="{{ asset('gallery/thumbs/02.jpg')}}"></a>
+                    <a href="{{ asset('gallery/03.jpg')}}"><img src="{{ asset('gallery/thumbs/03.jpg')}}"></a>
+                    <a href="{{ asset('gallery/04.jpg')}}"><img src="{{ asset('gallery/thumbs/04.jpg')}}"></a>
+            </div>
+        #}
+{% endblock %}
+    
+{% block javascript %}
+    <script type="text/javascript" src="{{asset('bundles/psapage/js/jquery-1.6.2.min.js')}}"></script>
+    {#<script type="text/javascript" src="{{ asset('js/yoxview/yoxview-init.js')}}" ></script>#}
+<script type="text/javascript" src="{{ asset('js/fotorama/fotorama.js')}}" ></script>
+    <script type="text/javascript" src="{{ asset('bundles/psapage/js/media.js')}}"></script>
+{% endblock %}	

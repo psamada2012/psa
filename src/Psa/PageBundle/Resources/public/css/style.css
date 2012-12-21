@@ -270,6 +270,15 @@ span.leaf {
   margin-left: 10px;
 }
 
+.news-sidebar h3.visiteur { 
+  padding: 14px 15px 14px 15px;
+  color: #74706E;
+  font: 190% 'Yanone Kaffeesatz';
+  font-size: 12px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
 .news-sidebar h4 { 
   color: #c00000;
 }

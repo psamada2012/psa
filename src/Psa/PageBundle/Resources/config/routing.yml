@@ -31,6 +31,10 @@ PsaPageBundle_about:
     pattern:  /about
     defaults: { _controller: PsaPageBundle:About:index }
 
+PsaPageBundle_gallery:
+    pattern:  /gallery
+    defaults: { _controller: PsaPageBundle:Gallery:index }
+    
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

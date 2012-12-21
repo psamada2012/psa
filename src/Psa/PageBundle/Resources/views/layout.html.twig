@@ -19,7 +19,12 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/style.css')}}" media="all">
 
 	<style media="screen" type="text/css">#myContent {visibility:hidden}</style>
-
+        
+        {#
+        <link rel="stylesheet" href="{{ asset('js/yoxview/yoxview.css')}}">
+        #}
+        <link rel="stylesheet" href="{{ asset('js/fotorama/fotorama.css')}}"></link>
+        
 <body class=" cms-index-index cms-accueil">
     <noscript>
         <div class="noscript">
@@ -87,6 +92,7 @@
 						 <div id="news_sidebar_container">
 							{% render 'PsaPageBundle:Article:widgetDerniersArticles' %}
 
+                                                        
 							<img class="news-paperclip" src="{{asset('bundles/psapage/images/commons/content/paperclip.png')}}" alt="paperclip" />
 							<div class="news-sidebar">
 							  <h3>Useful Links</h3>
