@@ -25,7 +25,7 @@ class AppKernel extends Kernel
             new Psa\AdminBundle\PsaAdminBundle(),
             new Psa\CommonBundle\PsaCommonBundle(),
             
-            //Forum Bundle
+            //Forum Bundles
             new EWZ\Bundle\TimeBundle\EWZTimeBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new CCDNComponent\CommonBundle\CCDNComponentCommonBundle(),
