@@ -17,6 +17,7 @@ $loader->registerNamespaces(array(
     
     //Bundle ajouté
     'FOS' => __DIR__.'/../vendor/bundles',
+<<<<<<< HEAD
     //Forum Bundle
     'EWZ'                           => __DIR__.'/../vendor/bundles',
     'WhiteOctober\PagerfantaBundle' => __DIR__.'/../vendor/bundles',
@@ -24,6 +25,9 @@ $loader->registerNamespaces(array(
     'CCDNComponent'                 => __DIR__.'/../vendor/bundles',
     'CCDNForum'                     => __DIR__.'/../vendor/bundles',
     'CCDNUser'                     => __DIR__.'/../vendor/bundles',
+=======
+    'CoreSphere' => __DIR__.'/../vendor/bundles',
+>>>>>>> 46cfdbdae38fed5ee6a4dc4e604b308058557be1
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
