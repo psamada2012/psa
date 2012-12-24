@@ -52,7 +52,7 @@ class Article
     private $datePublication;
 
     /**
-    * @ORM\ManyToOne(targetEntity="Psa\UserBundle\Entity\User")
+    * @ORM\ManyToOne(targetEntity="CCDNUser\UserBundle\Entity\User")
     */
     private $user;
 
@@ -151,9 +151,9 @@ class Article
     /**
      * Set user
      *
-     * @param Psa\UserBundle\Entity\User $user
+     * @param Psa\AdminBundle\Entity $user
      */
-    public function setUser(\Psa\UserBundle\Entity\User $user)
+    public function setUser(\CCDNUser\UserBundle\Entity\User $user)
     {
         $this->user = $user;
     }
@@ -161,7 +161,7 @@ class Article
     /**
      * Get user
      *
-     * @return Psa\UserBundle\Entity\User 
+     * @return Psa\AdminBundle\Entity 
      */
     public function getUser()
     {

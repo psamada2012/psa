@@ -63,4 +63,421 @@ jms_security_extra:
 fos_user:
     db_driver: orm  
     firewall_name: main
-    user_class: Psa\UserBundle\Entity\User
+    user_class: CCDNUser\UserBundle\Entity\User
+
+#*******************************************
+#Forum configuration
+#*********************************************
+#
+# for CCDNComponent CommonBundle
+#
+ccdn_component_common:
+    header:
+        registration_route: fos_user_registration_register
+        login_route: fos_user_security_login
+        logout_route: fos_user_security_logout
+        account_route: ccdn_user_user_account_show
+        profile_route: ccdn_user_profile_show
+        header_bar_links:
+#            - { bundle: CCDNUserMemberBundle, label:'ccdn_user_member.layout.header_links.members', route:'ccdn_user_member_index'} fenonantenaina
+            - { bundle: PSAPageBundle, label: 'Accueil', route:'PsaPageBundle_homepage' }
+            - { bundle: PSAPageBundle, label: 'PSAEP Caadp', route:'PsaPageBundle_about' }
+            - { bundle: PSAPageBundle, label: 'Articles', route:'PsaPageBundle_article' }
+            - { bundle: PSAPageBundle, label: 'Gallery', route:'PsaPageBundle_gallery' }
+            - { bundle: CCDNForumForumBundle, label:'ccdn_forum_forum.layout.header_links.forum', route:'ccdn_forum_forum_index'}
+            - { bundle: CCDNComponentDashboardBundle, label:'ccdn_component_dashboard.layout.header_links.dashboard', route:'ccdn_component_dashboard_index' }
+            - { bundle: PSAPageBundle, label: 'Contact', route:'PsaPageBundle_contact' }
+
+#
+# for CCDNComponent CrumbTrailBundle
+#
+ccdn_component_crumb_trail:
+    crumb:
+        first_crumb_truncate: 20
+        mid_crumb_truncate: 20
+        last_crumb_truncate: 20
+        
+#
+# for CCDNComponent DashboardBundle
+#
+ccdn_component_dashboard:
+    template:
+        engine: twig
+    dashboard:
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            #layout_template: CCDNComponentCommonBundle:Layout:layout_body_right.html.twig
+
+#
+# for CCDNComponent AttachmentBundle
+#
+ccdn_component_attachment:
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+    store:
+        dir: %ccdncomponent_attachmentbundle_file_store%
+    quota_per_user:
+        max_files_quantity: 20
+        max_filesize_per_file: 400KiB
+        max_total_quota: 2000KiB
+
+
+#
+# for CCDNForum KarmaBundle
+#
+ccdn_forum_karma:
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+
+#
+# for CCDNUser UserBundle
+#
+ccdn_user_user:
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+    sidebar:
+#        members_route: ccdn_user_member_index fenonantenaina
+        profile_route: ccdn_user_profile_show
+    account:
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    password:
+        change_password:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    security:
+        login:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+                
+#
+# for CCDNForum AdminBundle
+#
+ccdn_forum_admin:
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+    seo:
+        title_length: 67
+    category:
+        index:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            last_post_datetime_format: "d-m-Y - H:i"
+            enable_bb_parser: true
+        create:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumAdminBundle:Form:fields.html.twig
+        edit:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumAdminBundle:Form:fields.html.twig
+        delete:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    board:
+        create:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumAdminBundle:Form:fields.html.twig
+            enable_bb_editor: true
+        edit:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumAdminBundle:Form:fields.html.twig
+            enable_bb_editor: true
+        delete:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    topic:
+        show_closed:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            topics_per_page: 40
+            topic_title_truncate: 20
+            post_created_datetime_format: 'd-m-Y - H:i'
+            topic_closed_datetime_format: 'd-m-Y - H:i'
+            topic_deleted_datetime_format: 'd-m-Y - H:i'
+        show_deleted:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            topics_per_page: 40
+            topic_title_truncate: 17
+            topic_created_datetime_format: "d-m-Y - H:i"
+            topic_closed_datetime_format: "d-m-Y - H:i"
+            topic_deleted_datetime_format: "d-m-Y - H:i"
+        change_board:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumAdminBundle:Form:fields.html.twig
+        delete_topic:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    post:
+        show_deleted:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            posts_per_page: 40
+            topic_title_truncate: 17
+            post_created_datetime_format: "d-m-Y - H:i"
+            post_locked_datetime_format: "d-m-Y - H:i"
+            post_deleted_datetime_format: "d-m-Y - H:i"
+        show_locked:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            posts_per_page: 40
+            topic_title_truncate: 20
+            post_created_datetime_format: 'd-m-Y - H:i'
+            post_locked_datetime_format: 'd-m-Y - H:i'
+            post_deleted_datetime_format: 'd-m-Y - H:i'
+
+
+#
+# for CCDNForum ForumBundle
+#
+#
+# for CCDNForum ForumBundle    
+#
+ccdn_forum_forum:
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+    seo:
+        title_length: 67
+    category:
+        last_post_datetime_format: "d-m-Y - H:i"
+        index:
+            layout_template: PsaCommonBundle:layout:layout_body_right.html.twig
+            #layout_template: CCDNComponentCommonBundle:Layout:layout_body_right.html.twig
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            #layout_template: CCDNComponentCommonBundle:Layout:layout_body_right.html.twig
+    board:
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            #layout_template: CCDNComponentCommonBundle:Layout:layout_body_right.html.twig
+            topics_per_page: 4
+            topic_title_truncate: 50
+            first_post_datetime_format: "d-m-Y - H:i"
+            last_post_datetime_format: "d-m-Y - H:i"
+    topic:
+        flood_control:
+            post_limit: 4
+            block_for_minutes: 1
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            #layout_template: CCDNComponentCommonBundle:Layout:layout_body_right.html.twig
+            posts_per_page: 10        
+            topic_closed_datetime_format: "d-m-Y - H:i"
+            topic_deleted_datetime_format: "d-m-Y - H:i"
+        create:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumForumBundle:Form:fields.html.twig
+            enable_bb_editor: true
+        reply:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumForumBundle:Form:fields.html.twig
+            enable_bb_editor: true
+    post:
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            topic_closed_datetime_format: "d-m-Y - H:i"
+            topic_deleted_datetime_format: "d-m-Y - H:i"
+#            enable_bb_editor: true
+        edit_topic:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumForumBundle:Form:fields.html.twig
+#            enable_bb_parser: true
+        edit_post:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumForumBundle:Form:fields.html.twig
+            enable_bb_editor: true
+        delete_post:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    item_board:
+        enable_bb_parser: true
+    item_post:
+        post_created_datetime_format: "d-m-Y - H:i"
+        post_edited_datetime_format: "d-m-Y - H:i"
+        post_locked_datetime_format: "d-m-Y - H:i"
+        post_deleted_datetime_format: "d-m-Y - H:i"
+        enable_bb_parser: true
+    item_signature:
+        enable_bb_parser: true
+    draft:
+        list:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            drafts_per_page: 10
+            topic_title_truncate: 80
+            creation_datetime_format: "d-m-Y - H:i"
+    subscription:
+        list:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            topics_per_page: 40
+            topic_title_truncate: 50
+            first_post_datetime_format: "d-m-Y - H:i"
+            last_post_datetime_format: "d-m-Y - H:i"
+    transcript:
+        post_creation_datetime_format: "d-m-Y - H:i"
+        post_deleted_datetime_format: "d-m-Y - H:i"
+
+#ccdn_forum_forum.flag.form.default._choices: { choices: ["flag"], message: fenonantenaina }
+
+#
+# for CCDNUser AdminBundle
+#
+#
+# for CCDNUser AdminBundle   
+#
+ccdn_user_admin:
+    user:
+        profile_route: ccdn_user_profile_show_by_id 
+    template:
+        engine: twig
+    seo:
+        title_length: 67
+    activation:
+        show_unactivated_users:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            users_per_page: 30
+            member_since_datetime_format: "d-m-Y - H:i"
+    ban:
+        show_banned_users:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            users_per_page: 30
+            member_since_datetime_format: "d-m-Y - H:i"
+    role:
+        set_users_role:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNUserAdminBundle:Form:fields.html.twig
+    account:
+        show_newest_users:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            users_per_page: 30
+            member_since_datetime_format: "d-m-Y - H:i"
+        show_user:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            member_since_datetime_format: "d-m-Y - H:i"
+        edit_user_account:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNUserAdminBundle:Form:fields.html.twig
+        edit_user_profile:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNUserAdminBundle:Form:fields.html.twig
+
+ewz_recaptcha:
+    public_key: here_is_your_public_key
+    private_key: here_is_your_private_key
+    secure: false
+    locale_key: kernel.default_locale
+    enabled: false
+
+#ccdn_user_profile:
+#    seo:
+#        title_length:150
+
+ccdn_user_profile:
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+    sidebar:
+#        members_route: ccdn_user_member_index fenonantenaina
+        account_route: ccdn_user_user_account_show
+#        profile_route: ccdn_user_profile_show
+        registration_route: fos_user_registration_register
+        login_route: fos_user_security_login
+        logout_route: fos_user_security_logout
+        reset_route: fos_user_resetting_request
+    seo:
+        title_length: 150
+    profile:
+        show:
+            overview:
+                layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            bio:
+                layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+        edit:
+            personal:
+                layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            contact:
+                layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            bio:
+                layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            signature:
+                layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            avatar:
+                layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+                   
+#
+# for CCDNForum ModeratorBundle
+#
+ccdn_forum_moderator:
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+    seo:
+        title_length: 67
+    flag:
+        show_flagged:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            flags_per_page: 40
+            topic_title_truncate: 50
+            flag_created_datetime_format: 'd-m-Y - H:i'
+            post_created_datetime_format: 'd-m-Y - H:i'
+        show_flag:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+        update_flag:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumModeratorBundle:Form:fields.html.twig
+    item_flag:
+        flag_created_datetime_format: 'd-m-Y - H:i'
+        moderated_datetime_format: 'd-m-Y - H:i'
+    topic:
+        change_board:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumModeratorBundle:Form:fields.html.twig
+        delete_topic: 
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+        show_closed: 
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            topics_per_page: 40
+            topic_title_truncate: 20
+            post_created_datetime_format: 'd-m-Y - H:i'
+            topic_closed_datetime_format: 'd-m-Y - H:i'
+            topic_deleted_datetime_format: 'd-m-Y - H:i'
+    post:
+        show_locked:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            posts_per_page: 40
+            topic_title_truncate: 20
+            post_created_datetime_format: 'd-m-Y - H:i'
+            post_locked_datetime_format: 'd-m-Y - H:i'
+            post_deleted_datetime_format: 'd-m-Y - H:i'
+
+#
+# for CCDNForum KarmaBundle
+#
+ccdn_forum_karma:
+    user:
+        profile_route: ccdn_user_profile_show_by_id 
+    template:
+        engine: twig
+    seo:
+        title_length: 67
+    review:
+        review_all:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            reviews_per_page: 40
+            topic_title_truncate: 70
+            rating_datetime_format: "d-m-Y - H:i"
+            enable_bb_parser: true
+    rate:
+        rate:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+            form_theme: CCDNForumKarmaBundle:Form:fields.html.twig
+            enable_bb_editor: true
+
+#
+# for CCDNComponent BBCodeBundle
+#
+ccdn_component_bb_code:
+    editor:
+        enable: true
+    parser:
+        enable: true

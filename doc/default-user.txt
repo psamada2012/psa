@@ -1,0 +1,7 @@
+Liste utilisateurs
+-------------------
+username        password        roles
+-------------------------------------------
+psasuper        xpsasuper       ROLE_SUPER_ADMIN (admin site + utilisateur)
+psaadmin        xpsaadmin       ROLE_ADMIN  (admin site)
+psamoderator   xpsamoderator    ROLE_MODERATOR (gestionnaire forum)

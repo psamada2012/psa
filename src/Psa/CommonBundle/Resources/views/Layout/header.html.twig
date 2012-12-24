@@ -1,0 +1,43 @@
+{%- spaceless -%}
+
+	<div id="header_bar">
+            
+
+		<div id="primary_bar">
+			<div id="primary_left">
+				<div id="logo">
+                                    <a href="{{path('PsaPageBundle_homepage') }}"><img class="site_logo" src="{{- asset('bundles/psapage/images/logo.png') -}}" alt="PSA AADP" style="height: 45px;"></a>
+                                </div>
+			</div>
+			<div id="primary_right">
+				<div class="btn-toolbar form-inline" style="margin-right:10px;">
+				{#{{- menu('layout.header.bottom') -}}#}
+				</div>
+			</div>
+		</div>
+            
+		<div id="secondary_bar">			
+			{#{{- menu('layout.header.top') -}}#}
+			
+			{%- set header_links = ccdn_component_common.header.header_bar_links -%}
+			{%- for row, link in header_links -%}
+				<a class="nav_link" href="{{- path(link['route']) -}}">{{- link['label'] | trans({}, link['bundle']) -}}</a>
+			{%- endfor -%}
+                        
+                        <span style="right: 20px; position: absolute; text-align: right;">
+
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                Utilisateur <a class="profile" href="{{ path('fos_user_profile_show') }}">{{app.user.username}}</a> | 
+                                {#{{ 'layout.logged_in_as'|trans({'%username%':  app.user.username}, 'PsaUserBundle') }} |#}
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'ccdn_user_user.layout.header.logout'|trans({}, 'CCDNUserUserBundle') }}
+                                </a>
+                            {% else %}
+                                {{ 'ccdn_user_user.anonymous'|trans({},'CCDNUserUserBundle') }} |
+                                <a href="{{ path('fos_user_security_login') }}">{{ 'ccdn_user_user.layout.header.login'|trans({}, 'CCDNUserUserBundle') }}</a>
+                            {% endif %}
+                                
+                        </span>
+		</div>
+	</div>
+{%- endspaceless -%}

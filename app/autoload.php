@@ -17,10 +17,18 @@ $loader->registerNamespaces(array(
     
     //Bundle ajouté
     'FOS' => __DIR__.'/../vendor/bundles',
+    //Forum Bundle
+    'EWZ'                           => __DIR__.'/../vendor/bundles',
+    'WhiteOctober\PagerfantaBundle' => __DIR__.'/../vendor/bundles',
+    'Pagerfanta'                    => __DIR__.'/../vendor/pagerfanta/src',
+    'CCDNComponent'                 => __DIR__.'/../vendor/bundles',
+    'CCDNForum'                     => __DIR__.'/../vendor/bundles',
+    'CCDNUser'                     => __DIR__.'/../vendor/bundles',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
+    'Geshi_'           => __DIR__.'/../vendor/lib-geshi/lib',
 ));
 
 // intl

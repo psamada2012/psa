@@ -1,0 +1,7 @@
+parameters:
+#    psa_common.example.class: Psa\CommonBundle\Example
+
+services:
+#    psa_common.example:
+#        class: %psa_common.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

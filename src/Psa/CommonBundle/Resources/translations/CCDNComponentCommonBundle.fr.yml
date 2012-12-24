@@ -1,0 +1,27 @@
+#
+# Layout Header Link Labels.
+#
+ccdn_component_common.layout.header.register: "Inscription"
+ccdn_component_common.layout.header.login: ''
+ccdn_component_common.layout.header.logout: 'Deconnecter'
+ccdn_component_common.layout.header.account: 'Compte'
+ccdn_component_common.layout.header.profile: 'Profil'
+
+#
+# Flash Messages.
+#
+ccdn_component_common.flash.notice:   'alert alert-info'
+ccdn_component_common.flash.success:  'alert alert-success'
+ccdn_component_common.flash.warning:  'alert alert'
+ccdn_component_common.flash.error:    'alert alert-error'
+
+#
+# Sidebar.
+#
+ccdn_component_common.sidebar.header.special: 'Special'
+
+#
+# Link Labels.
+#
+ccdn_component_common.general.view.link.administrate: "Panneaux d'administration"
+ccdn_component_common.general.view.link.all_dashboard: 'Tous les panneaux'

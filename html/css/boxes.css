@@ -176,10 +176,10 @@ table.pager li{padding:0 2px;}
 table.pager td.sort-by{width:60%;}
 table.pager td.sort-by .active,table.pager td.sort-by .active:hover{color:#444;}
 .tetiere{
-	background-image:url(../images/commons/background/bodyBgHead.png);
+	background-image:url(../images/commons/background/bodyBgHead-green.png);
 	background-repeat:repeat-x;
 	background-position:left top;
-	width:100%;height:210px;/*199px;*/
+	width:100%;height:220px;/*199px;height:210px;*/
 }
 .container{
 	position:relative;
@@ -208,9 +208,19 @@ table.pager td.sort-by .active,table.pager td.sort-by .active:hover{color:#444;}
        width:200px;
        margin-left:26px;
        padding:0px;
+    position: relative;
+    top: -40px;
 }
 .col-right{margin-top:25px;float:right;width:195px;margin-right:26px;}
-.col-main{margin-top:25px;float:right;width:685px;margin-right:15px;padding-bottom:10px;}
+.col-main{
+	margin-top:25px;
+	float:right;
+	width:685px;
+	margin-right:15px;
+	padding-bottom:10px;
+    position: relative;
+    top: -40px;
+}
 .col-main img{max-width:685px;}
 .outline-creator{
 	border:1px solid #bbb;

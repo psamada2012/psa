@@ -21,8 +21,27 @@ class AppKernel extends Kernel
             //Bundle ajouté
             new FOS\UserBundle\FOSUserBundle(),
             new Psa\PageBundle\PsaPageBundle(),
-            new Psa\UserBundle\PsaUserBundle(),
+            //new Psa\UserBundle\PsaUserBundle(),
             new Psa\AdminBundle\PsaAdminBundle(),
+            new Psa\CommonBundle\PsaCommonBundle(),
+            
+            //Forum Bundle
+            new EWZ\Bundle\TimeBundle\EWZTimeBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            new CCDNComponent\CommonBundle\CCDNComponentCommonBundle(),
+            new CCDNComponent\BBCodeBundle\CCDNComponentBBCodeBundle(),
+            new CCDNComponent\CrumbTrailBundle\CCDNComponentCrumbTrailBundle(),
+            new CCDNComponent\DashboardBundle\CCDNComponentDashboardBundle(),
+            new CCDNComponent\AttachmentBundle\CCDNComponentAttachmentBundle(),
+            new CCDNForum\KarmaBundle\CCDNForumKarmaBundle(),
+            new CCDNUser\UserBundle\CCDNUserUserBundle(),
+            new CCDNForum\AdminBundle\CCDNForumAdminBundle(),
+            new CCDNForum\ForumBundle\CCDNForumForumBundle(),
+            new CCDNUser\AdminBundle\CCDNUserAdminBundle(),
+            new EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
+            new CCDNUser\ProfileBundle\CCDNUserProfileBundle(),
+            new CCDNForum\ModeratorBundle\CCDNForumModeratorBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -31,7 +50,7 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
-
+        
         return $bundles;
     }
 

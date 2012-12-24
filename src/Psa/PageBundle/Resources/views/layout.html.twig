@@ -12,13 +12,15 @@
 	<meta name="google-site-verification" content="Tdt5ZB3f9eNu5_VoV5WvbGLpbzhzkH_-oamTrJ-PHbQ">
 
 	<style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style>
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/reset.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/boxes.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/menu.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/clears.css')}}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/style.css')}}" media="all">
-
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/reset.css')}}" media="all"></link>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/boxes.css')}}" media="all"></link>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/menu.css')}}" media="all"></link>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/clears.css')}}" media="all"></link>
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/style.css')}}" media="all"></link>
+        
 	<style media="screen" type="text/css">#myContent {visibility:hidden}</style>
+        
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/psapage/css/tomato-menu.css')}}" media="all"></link>
         
         {#
         <link rel="stylesheet" href="{{ asset('js/yoxview/yoxview.css')}}">
@@ -62,13 +64,52 @@
 			
 			<!-- REGION HEADER -->
 			<div class="header">
-				<a id="logo" href="{{path('PsaPageBundle_homepage') }}"><img src="{{asset('bundles/psapage/images/logo.gif')}}" alt="PSA AADP"></a>
+                            <a id="logo" href="{{path('PsaPageBundle_homepage') }}"><img src="{{asset('bundles/psapage/images/logo.png')}}" alt="PSAEP CAADP" style="margin-top:50px;"></a>
 			</div>
 			<!-- END REGION HEADER -->
 
 			<!-- REGION HEADER TEXT -->
 			<div class="outline-creator">
 				<div class="toplinks-bar">
+                                        <div id="cmenu">
+                                                <ul class="cmenu">
+                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_homepage') %} class="current" {% endif %}>
+                                                                <a href="{{path('PsaPageBundle_homepage')}}"><span>Accueil</span></a>
+                                                        </li>
+                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_about') %} class="current" {% endif %}>
+                                                                <a href="#" class="parent"><span>PSAEP Caadp</span></a>
+                                                                <div>
+                                                                        <ul>
+                                                                                <li><a href="{{path('PsaPageBundle_about')}}"><span>Qui somme nous</span></a></li>
+                                                                                <li><a href="#"><span>Composante</span></a></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </li>
+                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_article') %} class="current" {% endif %} {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_archive') %} class="current" {% endif %} {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_document') %} class="current" {% endif %}>
+                                                                <a href="#" class="parent"><span>Articles</span></a>
+                                                                <div>
+                                                                        <ul >
+                                                                                <li><a href="{{path('PsaPageBundle_article')}}"><span>Derniers articles</span></a></li>
+                                                                                <li><a href="{{path('PsaPageBundle_archive')}}"><span>Archives</span></a></li>
+                                                                                <li><a href="{{path('PsaPageBundle_document')}}"><span>Documents</span></a></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </li>
+                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_gallery') %} class="current" {% endif %}>
+                                                                <a href="#" class="parent"><span>Gallery</span></a>
+                                                                <div>
+                                                                        <ul >
+                                                                                <li><a href="{{path('PsaPageBundle_gallery')}}"><span>Photo</span></a></li>
+                                                                                <li><a href="#"><span>Vidéo</span></a></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </li>
+                                                        <li><a href="{{path('ccdn_forum_forum_home_root')}}"><span>Forum</span></a></li>
+                                                        <li {% if     app.request.attributes.get('_route') is sameas('PsaPageBundle_contact') %} class="last current" {% endif %}><a href="{{path('PsaPageBundle_contact')}}"><span>Contact</span></a></li>
+                                                </ul>
+                                        </div>
+                                        
+                                        {#
 					<div id="navigation">
 						<div>
 							<ul id="menuItems">
@@ -81,6 +122,7 @@
 							</ul>
 						</div>
 					</div>
+                                        #}
 				</div>
 				
 				<!-- REGION CONTENT -->
@@ -209,11 +251,13 @@
 			</div>
 			<!-- END REGION FANCY -->
 			
-			<!-- REGION SCRIPT !-->
+			<!-- REGION SCRIPT --!>
+                        <script type="text/javascript" src="{{ asset('bundles/psapage/js/jquery-1.6.2.min.js')}}"></script>
 			{% block javascript %}
 						
 			{% endblock %}	
-			<!-- END REGION SCRIPT !-->
-			
+                        <script type="text/javascript" src="{{ asset('bundles/psapage/js/front-menu.js')}}"></script>
+			<!-- END REGION SCRIPT --!> 
+			<div id="hideme" style="display:hidden"><a href="http://apycom.com/">Apycom jQuery Menuss</a></div>
 	</body>
 </html>

@@ -1,0 +1,87 @@
+.sidebar {
+	display:block;
+	height: 100% !important;
+	border-radius:0px !important;
+	overflow: auto !important;
+	clear: both !important;
+	padding: 0px !important;
+}
+
+.marked_read {
+	background-color: #fcfcfc;
+}
+
+.marked_unread {
+	background-color: #f7f7f7;
+}
+
+.mark_checked {
+	background-color: #fef9d7;
+}
+
+/*tr:hover {
+	background-color: #fef9d7 !important;
+}*/
+
+.table tbody tr[class*='mark_checked']:hover td {
+	background-color: #fff5b0 !important;
+}
+
+.center {text-align:center;}
+
+table tr th.left {text-transform:capitalize;}
+table tr th.left, table tr td.left {text-align:left;}
+
+table tr th.center {text-transform:capitalize;}
+table tr th.center, table tr td.center {text-align:center;}
+
+table tr th.right {text-transform:capitalize;}
+table tr th.right, table tr td.right {text-align:right;}
+
+/*a[name^='anchor_offset_'] {*/
+/*a.anchor {
+	display:block;
+	width: 90px;
+	height: 100px;
+	position: relative;
+	border:10px solid red;
+	top: -90px;
+	z-index: 2;
+}*/
+
+.form-confirmation {
+	display:block;
+	width:auto;
+/*	margin:5px;*/
+	padding:5px;
+	text-align:center;
+	overflow:hidden;
+}
+
+.form-confirmation .form-question {
+	display:block;
+	width:auto;
+	padding:30px;
+	text-align:center;
+	overflow:hidden;
+}
+
+.form-confirmation .form-answer {
+	display:block;
+	width:auto;
+	padding:30px;
+	border-top:1px solid #ddd;
+	background-color:#eee;
+	text-align:center;
+	overflow:hidden;
+}
+
+span.label a:link, span.label a:visited, span.label a:active, span.label a:hover {
+	color: #eee;
+}
+
+.common_body {
+	word-wrap:break-word;
+	
+}
+

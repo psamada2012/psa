@@ -21,3 +21,4 @@ PsaAdminBundle_message:
 PsaAdminBundle_slide:
     resource: "@PsaAdminBundle/Resources/config/routing/slide.yml"
     prefix:   /slide
+    

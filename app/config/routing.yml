@@ -1,3 +1,7 @@
+PsaCommonBundle:
+    resource: "@PsaCommonBundle/Resources/config/routing.yml"
+    prefix:   /
+
 PsaAdminBundle_pagemeta:
     resource: "@PsaAdminBundle/Resources/config/routing/pagemeta.yml"
     prefix:   /pagemeta
@@ -5,11 +9,11 @@ PsaAdminBundle_pagemeta:
 PsaAdminBundle:
     resource: "@PsaAdminBundle/Resources/config/routing.yml"
     prefix:   /admin
-
-PsaUserBundle:
-    resource: "@PsaUserBundle/Resources/config/routing.yml"
-    prefix:   /
-
+#
+#PsaUserBundle:
+#    resource: "@PsaUserBundle/Resources/config/routing.yml"
+#    prefix:   /
+#
 PsaPageBundle:
     resource: "@PsaPageBundle/Resources/config/routing.yml"
     prefix:   /
@@ -33,3 +37,57 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /admin/change-password
+
+
+
+#*****************************
+#Forum Configuration
+#*****************************
+CCDNComponentCommonBundle:
+    resource: "@CCDNComponentCommonBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNComponentDashboardBundle:
+    resource: "@CCDNComponentDashboardBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNComponentAttachmentBundle:
+    resource: "@CCDNComponentAttachmentBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNForumKarmaBundle:
+    resource: "@CCDNForumKarmaBundle/Resources/config/routing.yml"
+    prefix: /
+
+_security_check:
+    pattern: /login_check/
+_security_logout:
+    pattern: /logout
+
+CCDNUserUserBundle:
+    resource: "@CCDNUserUserBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNForumForumBundle:
+    resource: "@CCDNForumForumBundle/Resources/config/routing.yml"
+    prefix: /
+
+ccdn_forum_forum_home_root:
+    pattern: /forum
+    defaults: { _controller: CCDNForumForumBundle:Category:index, _locale:fr  }
+
+CCDNUserAdminBundle:
+    resource: "@CCDNUserAdminBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNUserProfileBundle:
+    resource: "@CCDNUserProfileBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNForumAdminBundle:
+    resource: "@CCDNForumAdminBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNForumModeratorBundle:
+    resource: "@CCDNForumModeratorBundle/Resources/config/routing.yml"
+    prefix: /

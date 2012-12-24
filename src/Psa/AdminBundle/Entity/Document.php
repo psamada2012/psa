@@ -43,7 +43,7 @@ class Document
     private $date_upload;
 
     /**
-    * @ORM\ManyToOne(targetEntity="Psa\UserBundle\Entity\User")
+    * @ORM\ManyToOne(targetEntity="CCDNUser\UserBundle\Entity\User")
     */
     private $user;
 
@@ -121,9 +121,9 @@ class Document
     /**
      * Set user
      *
-     * @param Psa\UserBundle\Entity\User $user
+     * @param Psa\AdminBundle\Entity $user
      */
-    public function setUser(\Psa\UserBundle\Entity\User $user)
+    public function setUser(\CCDNUser\UserBundle\Entity\User $user)
     {
         $this->user = $user;
     }
@@ -131,7 +131,7 @@ class Document
     /**
      * Get user
      *
-     * @return Psa\UserBundle\Entity\User 
+     * @return CCDNUser\UserBundle\Entity\User
      */
     public function getUser()
     {

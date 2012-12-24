@@ -34,7 +34,19 @@ PsaPageBundle_about:
 PsaPageBundle_gallery:
     pattern:  /gallery
     defaults: { _controller: PsaPageBundle:Gallery:index }
+
+PsaPageBundle_target:
+    pattern:  /target
+    defaults: { _controller: PsaAdminBundle:Target:index }
     
+PsaPageBundle_error403:
+    pattern:  /error403
+    defaults: { _controller: PsaPageBundle:Error:Error403 }
+
+PsaPageBundle_error404:
+    pattern:  /error404
+    defaults: { _controller: PsaPageBundle:Error:Error404 }
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
