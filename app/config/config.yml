@@ -79,13 +79,13 @@ ccdn_component_common:
         account_route: ccdn_user_user_account_show
         profile_route: ccdn_user_profile_show
         header_bar_links:
-#            - { bundle: CCDNUserMemberBundle, label:'ccdn_user_member.layout.header_links.members', route:'ccdn_user_member_index'} fenonantenaina
+            #- { bundle: CCDNUserMemberBundle, label:'ccdn_user_member.layout.header_links.members', route:'ccdn_user_member_index'}
             - { bundle: PSAPageBundle, label: 'Accueil', route:'PsaPageBundle_homepage' }
             - { bundle: PSAPageBundle, label: 'PSAEP Caadp', route:'PsaPageBundle_about' }
             - { bundle: PSAPageBundle, label: 'Articles', route:'PsaPageBundle_article' }
             - { bundle: PSAPageBundle, label: 'Gallery', route:'PsaPageBundle_gallery' }
-            - { bundle: CCDNForumForumBundle, label:'ccdn_forum_forum.layout.header_links.forum', route:'ccdn_forum_forum_index'}
-            - { bundle: CCDNComponentDashboardBundle, label:'ccdn_component_dashboard.layout.header_links.dashboard', route:'ccdn_component_dashboard_index' }
+            #- { bundle: CCDNForumForumBundle, label:'ccdn_forum_forum.layout.header_links.forum', route:'ccdn_forum_forum_index'}
+            #- { bundle: CCDNComponentDashboardBundle, label:'ccdn_component_dashboard.layout.header_links.dashboard', route:'ccdn_component_dashboard_index' }
             - { bundle: PSAPageBundle, label: 'Contact', route:'PsaPageBundle_contact' }
 
 #
@@ -123,15 +123,14 @@ ccdn_component_attachment:
         max_filesize_per_file: 400KiB
         max_total_quota: 2000KiB
 
-
 #
-# for CCDNForum KarmaBundle
+# for CCDNComponent BBCodeBundle
 #
-ccdn_forum_karma:
-    user:
-        profile_route: ccdn_user_profile_show_by_id
-    template:
-        engine: twig
+ccdn_component_bb_code:
+    editor:
+        enable: true
+    parser:
+        enable: true
 
 #
 # for CCDNUser UserBundle
@@ -142,7 +141,7 @@ ccdn_user_user:
     template:
         engine: twig
     sidebar:
-#        members_route: ccdn_user_member_index fenonantenaina
+        members_route: ccdn_user_member_index
         profile_route: ccdn_user_profile_show
     account:
         show:
@@ -376,7 +375,7 @@ ccdn_user_profile:
     template:
         engine: twig
     sidebar:
-#        members_route: ccdn_user_member_index fenonantenaina
+        members_route: ccdn_user_member_index
         account_route: ccdn_user_user_account_show
 #        profile_route: ccdn_user_profile_show
         registration_route: fos_user_registration_register
@@ -466,18 +465,51 @@ ccdn_forum_karma:
             reviews_per_page: 40
             topic_title_truncate: 70
             rating_datetime_format: "d-m-Y - H:i"
-            enable_bb_parser: true
+            #enable_bb_parser: true
     rate:
         rate:
             layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
             form_theme: CCDNForumKarmaBundle:Form:fields.html.twig
-            enable_bb_editor: true
+            #enable_bb_editor: true
+
+
 
 #
-# for CCDNComponent BBCodeBundle
+# for CCDNUser MemberBundle    
 #
-ccdn_component_bb_code:
-    editor:
-        enable: true
-    parser:
-        enable: true
+ccdn_user_member:
+    user:
+        profile_route: ccdn_user_profile_show_by_id 
+    template:
+        engine: twig
+    login_route: fos_user_security_login
+    sidebar:
+        account_route: ccdn_user_user_account_show
+        profile_route: ccdn_user_profile_show
+        registration_route: fos_user_registration_register
+        login_route: fos_user_security_login
+        logout_route: fos_user_security_logout
+        reset_route: fos_user_resetting_request
+    member:
+        list:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+
+
+#        
+# for CCDNMessage MessageBundle      
+#
+ccdn_message_message:  
+    user:
+        profile_route: ccdn_user_profile_show_by_id
+    template:
+        engine: twig
+    quotas:
+        max_messages: 100
+    folder:
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    message:
+        compose:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+        show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig

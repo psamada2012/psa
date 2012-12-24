@@ -23,7 +23,8 @@ $loader->registerNamespaces(array(
     'Pagerfanta'                    => __DIR__.'/../vendor/pagerfanta/src',
     'CCDNComponent'                 => __DIR__.'/../vendor/bundles',
     'CCDNForum'                     => __DIR__.'/../vendor/bundles',
-    'CCDNUser'                     => __DIR__.'/../vendor/bundles',
+    'CCDNUser'                      => __DIR__.'/../vendor/bundles',
+    'CCDNMessage'                   => __DIR__.'/../vendor/bundles',
 
     'CoreSphere' => __DIR__.'/../vendor/bundles',
 

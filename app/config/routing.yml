@@ -91,3 +91,11 @@ CCDNForumAdminBundle:
 CCDNForumModeratorBundle:
     resource: "@CCDNForumModeratorBundle/Resources/config/routing.yml"
     prefix: /
+
+CCDNUserMemberBundle:
+    resource: "@CCDNUserMemberBundle/Resources/config/routing.yml"
+    prefix: /
+
+CCDNMessageMessageBundle:
+    resource: "@CCDNMessageMessageBundle/Resources/config/routing.yml"
+    prefix:   /

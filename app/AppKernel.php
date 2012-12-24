@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new CCDNComponent\CrumbTrailBundle\CCDNComponentCrumbTrailBundle(),
             new CCDNComponent\DashboardBundle\CCDNComponentDashboardBundle(),
             new CCDNComponent\AttachmentBundle\CCDNComponentAttachmentBundle(),
+            new CCDNComponent\MenuBundle\CCDNComponentMenuBundle(),
             new CCDNForum\KarmaBundle\CCDNForumKarmaBundle(),
             new CCDNUser\UserBundle\CCDNUserUserBundle(),
             new CCDNForum\AdminBundle\CCDNForumAdminBundle(),
@@ -41,6 +42,8 @@ class AppKernel extends Kernel
             new EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
             new CCDNUser\ProfileBundle\CCDNUserProfileBundle(),
             new CCDNForum\ModeratorBundle\CCDNForumModeratorBundle(),
+            new CCDNUser\MemberBundle\CCDNUserMemberBundle(),
+            new CCDNMessage\MessageBundle\CCDNMessageMessageBundle(),
 
         );
 
