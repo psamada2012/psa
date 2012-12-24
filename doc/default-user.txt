@@ -2,7 +2,8 @@ Liste utilisateurs
 -------------------
 username        password        roles
 -------------------------------------------
-psasuper        xpsasuper       ROLE_SUPER_ADMIN (admin site + utilisateur)
-psaadmin        xpsaadmin       ROLE_ADMIN  (admin site)
+psasuper        xpsasuper       ROLE_SUPER_ADMIN (admin site + forum + utilisateur)
+psaadmin        xpsaadmin       ROLE_ADMIN  (admin site + forum)
+psauser        	xpsauser        ROLE_USER    (user forum)
 
 ###DESACTIVE: psamoderator   xpsamoderator    ROLE_MODERATOR (gestionnaire forum)
