@@ -122,6 +122,12 @@ ccdn_component_attachment:
         max_files_quantity: 20
         max_filesize_per_file: 400KiB
         max_total_quota: 2000KiB
+    manage:
+        upload:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+        list:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+
 
 #
 # for CCDNComponent BBCodeBundle
@@ -145,6 +151,8 @@ ccdn_user_user:
         profile_route: ccdn_user_profile_show
     account:
         show:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+        edit:
             layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
     password:
         change_password:
