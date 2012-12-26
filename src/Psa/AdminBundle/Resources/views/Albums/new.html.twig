@@ -1,0 +1,24 @@
+{% extends "PsaAdminBundle::layout.html.twig" %}
+
+{% block main %}
+
+<div class="content-list-article">
+<h1 class="titre-list">Albums creation</h1>
+
+<form action="{{ path('albums_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('albums') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+</div>
+
+{% endblock %}

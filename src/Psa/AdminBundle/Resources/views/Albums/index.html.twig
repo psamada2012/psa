@@ -1,0 +1,47 @@
+{% extends "PsaAdminBundle::layout.html.twig" %}
+
+{% block main %}
+
+<div class="content-list-article">
+<h1 class="titre-list">Albums list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Date_creation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr {%if loop.index is divisibleby(2)%} class="vert-fonc" {%else%}class="vert-clair"{%endif%} >
+            <td><a href="{{ path('albums_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.titre }}</td>
+            <td>{% if entity.datecreation %}{{ entity.datecreation|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('albums_edit', { 'id': entity.id }) }}">Modifier/Ajouter photo</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('albums_delete', { 'id': entity.id }) }}">Suprimer</a>
+                    </li>
+                    
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('albums_new') }}">
+            + Ajouter Album
+        </a>
+    </li>
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+gallery:
+    pattern:  /
+    defaults: { _controller: "PsaAdminBundle:Gallery:index" }
+
+gallery_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PsaAdminBundle:Gallery:show" }
+
+gallery_new:
+    pattern:  /new/{album_id}
+    defaults: { _controller: "PsaAdminBundle:Gallery:new" }
+
+gallery_create:
+    pattern:  /create
+    defaults: { _controller: "PsaAdminBundle:Gallery:create" }
+    requirements: { _method: post }
+
+gallery_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PsaAdminBundle:Gallery:edit" }
+
+gallery_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PsaAdminBundle:Gallery:update" }
+    requirements: { _method: post }
+
+gallery_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PsaAdminBundle:Gallery:delete" }

@@ -5,16 +5,9 @@
 
     <h3>Album test</h3>
     <div class="fotorama" data-transition="fade" data-width="680" data-height="460">
-            <a href="{{ asset('gallery/01.jpg')}}" ><img src="{{ asset('gallery/thumbs/01.jpg')}}"></a>
-            <a href="{{ asset('gallery/02.jpg')}}" ><img src="{{ asset('gallery/thumbs/02.jpg')}}"></a>
-            <a href="{{ asset('gallery/03.jpg')}}"><img src="{{ asset('gallery/thumbs/03.jpg')}}"></a>
-            <a href="{{ asset('gallery/04.jpg')}}"><img src="{{ asset('gallery/thumbs/04.jpg')}}"></a>
-            <a href="{{ asset('gallery/05.jpg')}}"><img src="{{ asset('gallery/thumbs/05.jpg')}}"></a>
-            <a href="{{ asset('gallery/06.jpg')}}"><img src="{{ asset('gallery/thumbs/06.jpg')}}"></a>
-            <a href="{{ asset('gallery/07.jpg')}}"><img src="{{ asset('gallery/thumbs/07.jpg')}}"></a>
-            <a href="{{ asset('gallery/08.jpg')}}"><img src="{{ asset('gallery/thumbs/08.jpg')}}"></a>
-            <a href="{{ asset('gallery/09.jpg')}}"><img src="{{ asset('gallery/thumbs/09.jpg')}}"></a>
-            <a href="{{ asset('gallery/10.jpg')}}"><img src="{{ asset('gallery/thumbs/10.jpg')}}"></a>
+            {% for gallery in galleries %}
+            <a href="{{ asset(gallery.src)}}"><img src="{{ asset(gallery.src)}}"></a>
+            {%endfor%}
     </div>
 
      {#

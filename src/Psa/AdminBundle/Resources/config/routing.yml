@@ -21,4 +21,11 @@ PsaAdminBundle_message:
 PsaAdminBundle_slide:
     resource: "@PsaAdminBundle/Resources/config/routing/slide.yml"
     prefix:   /slide
-    
+
+PsaAdminBundle_gallery:
+    resource: "@PsaAdminBundle/Resources/config/routing/gallery.yml"
+    prefix:   /gallery
+
+PsaAdminBundle_albums:
+    resource: "@PsaAdminBundle/Resources/config/routing/albums.yml"
+    prefix:   /albums

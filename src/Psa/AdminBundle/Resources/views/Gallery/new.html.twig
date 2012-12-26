@@ -1,0 +1,24 @@
+{% extends "PsaAdminBundle::layout.html.twig" %}
+
+{% block main %}
+
+<div class="content-list-article">
+<h1 class="titre-list">Création Gallery</h1>
+
+<form action="{{ path('gallery_create') }}" method="post" {{ form_enctype(form) }}>
+    <input type="hidden" name="a_id" value="{{ app.request.attributes.get('album_id')}}"/>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Créer</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('gallery') }}">
+            list gallery
+        </a>
+    </li>
+</ul>
+</div>
+{% endblock %}

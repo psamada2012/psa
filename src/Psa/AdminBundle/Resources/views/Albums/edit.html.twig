@@ -1,0 +1,62 @@
+{% extends "PsaAdminBundle::layout.html.twig" %}
+
+{% block main %}
+
+<div class="content-list-article">
+<h1 class="titre-list">Albums edit</h1>
+
+<form action="{{ path('albums_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Modifier le Titre</button>
+    </p>
+</form>
+
+<ul>
+    <li>
+        <a href="{{ path('gallery_new',{'album_id':entity.id}) }}">
+            +Ajouter Image Pour cette Album
+        </a>
+    </li>
+</ul>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <!--
+            <th>Id</th>
+            <th>Album_id</th>
+            -->
+            <th>Src</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in galleries %}
+        <tr {%if loop.index is divisibleby(2)%} class="vert-fonc" {%else%}class="vert-clair"{%endif%} >
+            <!--
+            <td><a href="{{ path('gallery_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.albumid }}</td>
+            -->
+             <td><img src="{{ asset(entity.src) }}" width="100px"/></td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('gallery_delete', { 'id': entity.id }) }}">Supprimer</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('albums') }}">
+            << List Album
+        </a>
+    </li>
+</ul>
+</div>
+{%endblock%}

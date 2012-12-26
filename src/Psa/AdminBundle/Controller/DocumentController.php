@@ -94,9 +94,8 @@ class DocumentController extends Controller
                  //Upload
                 if ($file_uploaded["success"]== true) {
                     $path = $file_uploaded["fichier"];
-                    $entity->setpath($path);
+                    $entity->setPath($path);
                 }  else {
-                    $entity->setpath($oldPath);
                     $this->get('session')->setFlash('error', $file_uploaded["error"]);
                 }
             }

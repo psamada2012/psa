@@ -32,8 +32,12 @@ PsaPageBundle_about:
     defaults: { _controller: PsaPageBundle:About:index }
 
 PsaPageBundle_gallery:
-    pattern:  /gallery
-    defaults: { _controller: PsaPageBundle:Gallery:index }
+    pattern:  /gallery/{album_id}
+    defaults: { _controller: PsaPageBundle:Gallery:index, album_id:null }
+
+PsaPageBundle_albums:
+    pattern:  /albums
+    defaults: { _controller: PsaPageBundle:Albums:index }
 
 PsaPageBundle_target:
     pattern:  /target

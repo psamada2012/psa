@@ -1,0 +1,29 @@
+albums:
+    pattern:  /
+    defaults: { _controller: "PsaAdminBundle:Albums:index" }
+
+albums_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PsaAdminBundle:Albums:show" }
+
+albums_new:
+    pattern:  /new
+    defaults: { _controller: "PsaAdminBundle:Albums:new" }
+
+albums_create:
+    pattern:  /create
+    defaults: { _controller: "PsaAdminBundle:Albums:create" }
+    requirements: { _method: post }
+
+albums_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PsaAdminBundle:Albums:edit" }
+
+albums_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PsaAdminBundle:Albums:update" }
+    requirements: { _method: post }
+
+albums_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PsaAdminBundle:Albums:delete" }
