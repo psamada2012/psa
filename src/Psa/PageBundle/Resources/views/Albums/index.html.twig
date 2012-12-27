@@ -3,11 +3,12 @@
         
 {% block main %}
 
-    <h3>Album test</h3>
+    <h3>List des Albums</h3>
     <ul>
             {% for album in albums %}
             <li>
-            <a href="{{ path('PsaPageBundle_gallery',{'album_id':album.id})}}">album {{album.id}}</a>
+            <a href="{{ path('PsaPageBundle_gallery',{'album_id':album.id})}}"><img width="32" height="32" class="img-folder" alt="" src="{{asset('images/folder.gif')}}"></a> 
+            <a href="{{ path('PsaPageBundle_gallery',{'album_id':album.id})}}">{{album.titre}}</a>
             </li>
             {%endfor%}
     </ul>
