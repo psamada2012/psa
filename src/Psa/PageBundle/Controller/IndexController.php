@@ -31,4 +31,13 @@ class IndexController extends Controller
 				
         return $this->render('PsaPageBundle:Index:index.html.twig',$aParam);
     }
+    
+    
+    /**
+    * Left Menu: Useful link
+    */
+    public function widgetUsefulLinkAction()
+    {
+         return $this->render('PsaPageBundle:Index:widget_useful_link.html.twig');
+    }
 }

@@ -160,7 +160,13 @@ ccdn_user_user:
     security:
         login:
             layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
-                
+    registration:
+        register:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+    resetting:
+        request:
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
+
 #
 # for CCDNForum AdminBundle
 #

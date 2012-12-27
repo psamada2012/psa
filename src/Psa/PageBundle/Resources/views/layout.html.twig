@@ -76,22 +76,23 @@
                                                         <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_homepage') %} class="current" {% endif %}>
                                                                 <a href="{{path('PsaPageBundle_homepage')}}"><span>Accueil</span></a>
                                                         </li>
-                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_about') %} class="current" {% endif %}>
+                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_about') %} class="current" {% endif %} {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_document') %} class="current" {% endif %}>
                                                                 <a href="#" class="parent"><span>PSAEP Caadp</span></a>
                                                                 <div>
                                                                         <ul>
                                                                                 <li><a href="{{path('PsaPageBundle_about')}}"><span>Qui somme nous</span></a></li>
-                                                                                <li><a href="#"><span>Composante</span></a></li>
+                                                                                {#<li><a href="#"><span>Composante</span></a></li>#}
+																				<li><a href="{{path('PsaPageBundle_document')}}"><span>Documents</span></a></li>
                                                                         </ul>
                                                                 </div>
                                                         </li>
-                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_article') %} class="current" {% endif %} {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_archive') %} class="current" {% endif %} {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_document') %} class="current" {% endif %}>
+                                                        <li {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_article') %} class="current" {% endif %} {% if  app.request.attributes.get('_route') is sameas('PsaPageBundle_archive') %} class="current" {% endif %} >
                                                                 <a href="#" class="parent"><span>Articles</span></a>
                                                                 <div>
                                                                         <ul >
                                                                                 <li><a href="{{path('PsaPageBundle_article')}}"><span>Derniers articles</span></a></li>
                                                                                 <li><a href="{{path('PsaPageBundle_archive')}}"><span>Archives</span></a></li>
-                                                                                <li><a href="{{path('PsaPageBundle_document')}}"><span>Documents</span></a></li>
+                                                                                {#<li><a href="{{path('PsaPageBundle_document')}}"><span>Documents</span></a></li>#}
                                                                         </ul>
                                                                 </div>
                                                         </li>
@@ -133,8 +134,9 @@
                                             
 						 <div id="news_sidebar_container">
 							{% render 'PsaPageBundle:Article:widgetDerniersArticles' %}
-
-                                                        
+							{% render 'PsaPageBundle:Index:widgetUsefulLink' %}
+                                                         
+                                                        {#                           
 							<img class="news-paperclip" src="{{asset('bundles/psapage/images/commons/content/paperclip.png')}}" alt="paperclip" />
 							<div class="news-sidebar">
 							  <h3>Useful Links</h3>
@@ -145,6 +147,7 @@
 								<li><a href="#">Last One</a></li>
 							  </ul>
 							</div>
+							#}
 						  </div>
 					</div>
 					<!-- END REGION FIRST COLUMN -->
