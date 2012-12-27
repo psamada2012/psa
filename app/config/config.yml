@@ -254,7 +254,7 @@ ccdn_forum_forum:
     category:
         last_post_datetime_format: "d-m-Y - H:i"
         index:
-            layout_template: PsaCommonBundle:layout:layout_body_right.html.twig
+            layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
             #layout_template: CCDNComponentCommonBundle:Layout:layout_body_right.html.twig
         show:
             layout_template: PsaCommonBundle:Layout:layout_body_right.html.twig
