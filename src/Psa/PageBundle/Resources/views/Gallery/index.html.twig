@@ -3,7 +3,12 @@
         
 {% block main %}
 
-    <h3>Album test</h3>
+    {%- if album -%}
+          {%- set titreAlbum = album.titre -%}
+    {%- else -%}
+          {%- set titreAlbum = "Album PSA" -%}
+    {%- endif -%} 
+    <h3>{{titreAlbum}}</h3>
     <div class="fotorama" data-transition="fade" data-width="680" data-height="460">
             {% for gallery in galleries %}
             <a href="{{ asset(gallery.src)}}"><img src="{{ asset(gallery.src)}}"></a>

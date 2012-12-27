@@ -82,7 +82,8 @@
 								<li {% if  app.request.attributes.get('_route') is sameas('slide') %} class="active" {% endif %} ><a href="{{path('slide')}}"><span>Slide</span></a></li>
                                                                 <li {% if  app.request.attributes.get('_route') is sameas('article') %} class="active" {% endif %} ><a href="{{path('article')}}"><span>Article</span></a></li>
 								<li {% if  app.request.attributes.get('_route') is sameas('document') %} class="active" {% endif %} ><a href="{{path('document')}}"><span>Document</span></a></li>
-								<li {% if  app.request.attributes.get('_route') is sameas('PsaAdminBundle_about') %} class="active" {% endif %}><a href="{{path('PsaAdminBundle_about')}}"><span>Qui somme nous</span></a></li>
+								<li {% if  app.request.attributes.get('_route') is sameas('albums') %} class="active" {% endif %}><a href="{{path('albums')}}"><span>Albums</span></a></li>
+                                                                <li {% if  app.request.attributes.get('_route') is sameas('PsaAdminBundle_about') %} class="active" {% endif %}><a href="{{path('PsaAdminBundle_about')}}"><span>Qui somme nous</span></a></li>
                                                                 <li ><a href="{{path('ccdn_component_dashboard_index')}}"><span>Forum</span></a></li>
 								<li {% if  app.request.attributes.get('_route') is sameas('message') %} class="active" {% endif %}><a href="{{path('message')}}"><span>Contact</span></a></li>
 							</ul>

@@ -339,3 +339,25 @@ span.leaf {
   font-style: italic;
   color: #006500;
 }
+
+
+#elevage{
+    border: 0 none;
+    left: 10px;
+    top:8px;
+    position: absolute;
+}
+
+#agriculture{
+    border: 0 none;
+    left: 60px;
+    top:8px;
+    position: absolute;
+}
+
+#peche{
+    border: 0 none;
+    left: 125px;
+    top:9px;
+    position: absolute;
+}
