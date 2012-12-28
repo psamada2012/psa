@@ -182,6 +182,8 @@ class ArticleController extends Controller
 					$entity->setImage1($oldImage1);
                     $this->get('session')->setFlash('info', $file_uploaded["error"]);
                 }
+            }else{
+                $entity->setImage1($oldImage1);
             }
             
             $em->persist($entity);
