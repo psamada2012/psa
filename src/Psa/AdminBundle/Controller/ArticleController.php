@@ -21,10 +21,13 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entities = $em->getRepository('PsaAdminBundle:Article')->findAll();
+        $articles = $em->getRepository('PsaAdminBundle:Article')->findBy(
+                    $criteres	= array(),
+                    $order		= array("datePublication"=>"desc")
+            );
 
         return $this->render('PsaAdminBundle:Article:index.html.twig', array(
-            'entities' => $entities
+            'entities' => $articles
         ));
     }
 
