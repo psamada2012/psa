@@ -2,7 +2,7 @@
 	<div class="news-sidebar">
 		<h3>Dernier articles</h3>
 		{% for article in articles%}
-			{{article.datePublication|date("m/j/Y")}}: {{article.titre|raw}}</br>
+			{{article.datePublication|date("j/m/Y")}}: {{article.titre|raw}}</br>
 			{{article.contenu|raw|slice(0,100)}}...<a href="{{path('PsaPageBundle_article_show',{id:article.id})}}">En savoir plus</a><br/>
 			<br/>
 		 {%endfor%}
