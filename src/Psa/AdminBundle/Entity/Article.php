@@ -34,6 +34,7 @@ class Article
      * @ORM\Column(name="contenu", type="text")
      */
     private $contenu;
+    
 
     /**
      * @var string $image1
