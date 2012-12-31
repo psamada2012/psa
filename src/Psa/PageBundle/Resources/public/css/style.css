@@ -343,21 +343,24 @@ span.leaf {
 
 #elevage{
     border: 0 none;
-    left: 10px;
-    top:8px;
+    left: 30px;
+    top:15px;
     position: absolute;
+    height: 60px;
 }
 
 #agriculture{
     border: 0 none;
-    left: 60px;
-    top:8px;
+    left: 90px;
+    top:15px;
     position: absolute;
+    height: 60px;
 }
 
 #peche{
     border: 0 none;
-    left: 125px;
-    top:9px;
+    left: 160px;
+    top:15px;
     position: absolute;
+    height: 60px;
 }
