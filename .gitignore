@@ -1,8 +1,11 @@
+/doc/
+/html/
 /web/bundles/
+/web/images/
+/web/js/
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
 /vendor/
 /web/documents/*
-/app/config/parameters.yml
 /nbproject/
