@@ -4,15 +4,17 @@
 
 					
     <div id="page">
-        {% for article in articles%}
-        <div class="article">
-                
-                <h2 class="title">{{article.titre|raw}} ({{article.datePublication|date("j/m/Y")}})</h2> 
-                <img  src="{{asset(article.image1)}}" alt="" width="250" height="250" class="alignleft" />
-                <p>{{article.contenu|raw|slice(0,800)}} </p>
-                <a style="float: right" href="{{path('PsaPageBundle_article_show',{id:article.id})}}">En savoir plus</a><br/><br/>
-        </div>
-        {%endfor%}
+        {%- if articles -%}
+            {% for article in articles%}
+            <div class="article">
+
+                    <h2 class="title">{{article.titre|raw}} ({{article.datePublication|date("j/m/Y")}})</h2> 
+                    <img  src="{{asset(article.image1)}}" alt="" width="250" height="250" class="alignleft" />
+                    <p>{{article.contenu|raw|slice(0,800)}} </p>
+                    <a style="float: right" href="{{path('PsaPageBundle_article_show',{id:article.id})}}">En savoir plus</a><br/><br/>
+            </div>
+            {%endfor%}
+        {%- endif -%}
     </div>
 
 {% endblock %}

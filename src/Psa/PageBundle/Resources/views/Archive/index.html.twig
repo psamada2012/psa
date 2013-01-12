@@ -4,14 +4,15 @@
 
     <div id="archive">
              <ul>
-                 {% for article in articles%}
-                     <li>
-                             <span class="leaf"></span>
-                             <h3>{{article.titre|raw}} <em>{{article.datePublication|date("j/m/Y")}}</em></h3>
-                             <p>{{article.contenu|raw|slice(0,400)}} ...<a href="{{path('PsaPageBundle_article_show',{id:article.id})}}">Lire la suite</a></p>
-                     </li>
-                {%endfor%}
-                    
+                  {%- if articles -%}
+                    {% for article in articles%}
+                        <li>
+                                <span class="leaf"></span>
+                                <h3>{{article.titre|raw}} <em>{{article.datePublication|date("j/m/Y")}}</em></h3>
+                                <p>{{article.contenu|raw|slice(0,400)}} ...<a href="{{path('PsaPageBundle_article_show',{id:article.id})}}">Lire la suite</a></p>
+                        </li>
+                    {%endfor%}
+                 {%- endif -%}
              </ul>
      </div>
 
