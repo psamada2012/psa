@@ -21,10 +21,13 @@ class DocumentController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entities = $em->getRepository('PsaAdminBundle:Document')->findAll();
+         $documents = $em->getRepository('PsaAdminBundle:Document')->findBy(
+                    $criteres	= array(),
+                    $order		= array("date_upload"=>"desc")
+            );
 
         return $this->render('PsaAdminBundle:Document:index.html.twig', array(
-            'entities' => $entities
+            'entities' => $documents
         ));
     }
 
@@ -95,6 +98,7 @@ class DocumentController extends Controller
                 if ($file_uploaded["success"]== true) {
                     $path = $file_uploaded["fichier"];
                     $entity->setPath($path);
+                    $entity->setDateUpload(new \Datetime());
                 }  else {
                     $this->get('session')->setFlash('error', $file_uploaded["error"]);
                 }
@@ -181,6 +185,8 @@ class DocumentController extends Controller
                     $entity->setpath($oldPath);
                     $this->get('session')->setFlash('error', $file_uploaded["error"]);
                 }
+            }else{
+                $entity->setpath($oldPath);
             }
             
             $em->persist($entity);
